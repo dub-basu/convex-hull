@@ -20,12 +20,12 @@ bool Point::operator!=(const Point &p2) {
 }
 
 bool Point::operator< (const Point& right) const{
-    if(x < right.x)
+    if(y < right.y)
         return true;
-    else if( x > right.x)
+    else if( y > right.y)
         return false;
     else
-        return y < right.y;
+        return x < right.x;
 }
 
 bool Point::is_nan(){
