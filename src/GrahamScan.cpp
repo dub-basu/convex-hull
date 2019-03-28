@@ -6,7 +6,6 @@ GrahamScan::GrahamScan(){}
 
 GrahamScan::GrahamScan(std::vector<Point>& points){
     set_input_points(points);
-    compute_convex_hull();
 }
 
 void GrahamScan::set_input_points(std::vector<Point>& points){
