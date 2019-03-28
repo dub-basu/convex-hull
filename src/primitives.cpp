@@ -38,6 +38,19 @@ len Point::euclidean_distance(Point pt){
     return dist;
 }
 
+angle Point::angle_between_vectors(Point& pt1, Point& pt2){
+    Point origin(0,0);
+    angle cos_theta = (pt1.x * pt2.x) + (pt1.y * pt2.y);
+    cos_theta /= pt1.euclidean_distance(origin);
+    cos_theta /= pt2.euclidean_distance(origin);
+    return(acos(cos_theta));
+}
+
+std::ostream& operator<<(std::ostream& os, const Point& pt){
+    os << "(" << pt.x << ", " << pt.y << ")";
+    return os;
+}
+
 bool LineSegment::contains_point(Point pt) const{
     coordinate slope_diff = (pt.x - start_point.x) * (pt.y - end_point.y)
                           - (pt.x - end_point.x) * (pt.y - start_point.y);
@@ -131,9 +144,7 @@ bool LineSegment::is_nan(){
     return(start_point.is_nan() || end_point.is_nan());
 }
 
-PolarPoint::PolarPoint(){
-
-}
+PolarPoint::PolarPoint(){}
 
 PolarPoint::PolarPoint(Point pt, Point origin){
     x = pt.x;
@@ -147,8 +158,17 @@ PolarPoint::PolarPoint(Point pt, Point origin){
     }
 }
 
-len PolarPoint::get_p_distance(){ return(this -> p_distance); }
+len PolarPoint::get_p_distance() const{ return(this -> p_distance); }
 
-angle PolarPoint::get_p_angle(){ return(this -> p_angle); }
+angle PolarPoint::get_p_angle() const{ return(this -> p_angle); }
 
-angle PolarPoint::get_p_angle_degrees(){return((this -> p_angle) * (180 / PI));}
+angle PolarPoint::get_p_angle_degrees() const {return((this -> p_angle) * (180 / PI));}
+
+bool PolarPoint::operator< (const PolarPoint& right) const{
+    if(this->get_p_angle() < right.get_p_angle())
+        return true;
+    else if( this->get_p_angle() > right.get_p_angle())
+        return false;
+    else
+        return this->get_p_distance() >= right.get_p_distance();
+}

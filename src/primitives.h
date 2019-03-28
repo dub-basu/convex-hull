@@ -2,6 +2,7 @@
 #define PRIMITIVES
 
 #include<cmath>
+#include<iostream>
 #include<limits>
 #include<map>
 
@@ -26,6 +27,9 @@ class Point{
         bool is_nan();
         bool operator< (const Point& right) const;
         len euclidean_distance(Point);
+        static angle angle_between_vectors(Point&, Point&);
+        friend std::ostream& operator<<(std::ostream& os, const Point& pt);
+
 };
 
 class LineSegment{
@@ -53,9 +57,10 @@ class PolarPoint: public Point{
     public:
         PolarPoint();
         PolarPoint(Point, Point);
-        len get_p_distance();
-        angle get_p_angle();
-        angle get_p_angle_degrees();
+        len get_p_distance() const;
+        angle get_p_angle() const;
+        angle get_p_angle_degrees() const;
+        bool operator< (const PolarPoint& right) const;
         // static angle angle_between_vectors(PolarPoint, PolarPoint);
 };
 

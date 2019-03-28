@@ -1,16 +1,53 @@
 #include<iostream>
 #include "primitives.h"
+#include "GrahamScan.h"
 
 using namespace std;
 
 int main(){
     
-    Point p1(0,2);
-    Point p2(1,1);
+    /* Check Graham's Scan methods */
+    Point p1(1,1);
+    Point p2(2,2);
+    Point p3(3,3);
+    Point p4(4,4);
+    Point p5(5,5);
+    Point p6(6,6);
 
-    PolarPoint pp1(p2, p1);
-    cout << "x = " << pp1.x << ", " << "y = " << pp1.y << endl;
-    cout << "P distance = " << pp1.get_p_distance() << ", " << "P_angle = " << pp1.get_p_angle_degrees() << endl;
+    // Point p1(1,1);
+    // Point p2(0,2);
+    // Point p3(-1,1);
+    // Point p4(-1,-1);
+    // Point p5(0,3);
+    // Point p6(1,-1);
+
+    // Point p1(-1,1);
+    // Point p2(-0.5,0.5);
+    // Point p3(0,0);
+    // Point p4(-1,-1);
+    // Point p5(1,-1);
+    // Point p6(1,1);
+    // Point p7(2,0);
+    // Point p8(5,0);
+    
+    vector<Point> points;
+    points.push_back(p1);
+    points.push_back(p2);
+    points.push_back(p3);
+    points.push_back(p4);
+    points.push_back(p5);
+    points.push_back(p6);
+    // points.push_back(p7);
+    // points.push_back(p8);
+
+    GrahamScan gh_scan(points);
+    gh_scan.compute_convex_hull();
+    
+    vector<PolarPoint> result;
+    result = gh_scan.get_ch_points();
+
+    for(auto pt: result)
+        cout << pt << endl;
 
     return 0;
 }
