@@ -37,3 +37,6 @@ cmake-build-debug
 
 # VSCode directory
 .vscode
+
+# Scratch directory for running snippets
+scratch
