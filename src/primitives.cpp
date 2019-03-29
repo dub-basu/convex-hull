@@ -1,3 +1,4 @@
+#include<cmath>
 #include "primitives.h"
 
 Point::Point(){
@@ -165,6 +166,10 @@ angle PolarPoint::get_p_angle() const{ return(this -> p_angle); }
 angle PolarPoint::get_p_angle_degrees() const {return((this -> p_angle) * (180 / PI));}
 
 bool PolarPoint::operator< (const PolarPoint& right) const{
+
+    if(std::isnan(right.get_p_angle())) return true;
+    else if(std::isnan(this -> p_angle)) return false;
+
     if(this->get_p_angle() < right.get_p_angle())
         return true;
     else if( this->get_p_angle() > right.get_p_angle())
