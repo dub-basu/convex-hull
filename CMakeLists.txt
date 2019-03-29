@@ -12,4 +12,5 @@ add_executable(convex-hull
                 ./src/main.cpp
                 ./src/primitives.cpp
                 ./src/GrahamScan.cpp
+                ./src/JarvisMarch.cpp
             )
