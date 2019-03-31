@@ -62,6 +62,7 @@ class PolarPoint: public Point{
         angle get_p_angle() const;
         angle get_p_angle_degrees() const;
         bool operator< (const PolarPoint& right) const;
+        void set_p_angle(angle);
         // static angle angle_between_vectors(PolarPoint, PolarPoint);
 };
 

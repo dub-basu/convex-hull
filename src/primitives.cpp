@@ -182,3 +182,7 @@ bool PolarPoint::operator< (const PolarPoint& right) const{
     else
         return this->get_p_distance() >= right.get_p_distance();
 }
+
+void PolarPoint::set_p_angle(angle new_angle){
+    this -> p_angle = new_angle;
+}
