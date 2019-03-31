@@ -29,6 +29,11 @@ bool Point::operator< (const Point& right) const{
         return x < right.x;
 }
 
+Point Point::operator- (const Point& right) const{
+    Point difference(x - right.x, y - right.y);
+    return(difference);
+}
+
 bool Point::is_nan(){
     return(std::isnan(x) || std::isnan(y));
 }

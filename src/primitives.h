@@ -26,6 +26,7 @@ class Point{
         bool operator!= (const Point& p2);
         bool is_nan();
         bool operator< (const Point& right) const;
+        Point operator- (const Point& ) const;
         len euclidean_distance(Point);
         static angle angle_between_vectors(Point&, Point&);
         friend std::ostream& operator<<(std::ostream& os, const Point& pt);
