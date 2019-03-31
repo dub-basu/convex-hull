@@ -60,6 +60,10 @@ void GrahamScan::compute_convex_hull(){
         }
     }
 
+    point_stack.push(*(rear+1));
+    if(!is_stack_top_valid(point_stack)) point_stack.pop();
+    point_stack.pop();
+
     stack_to_ch_points(point_stack);
     sort(ch_points.begin(), ch_points.end());
 }
@@ -147,10 +151,20 @@ bool GrahamScan::is_stack_top_valid(std::stack<PolarPoint>& point_stack){
 void GrahamScan::prep_scan_points(){
     if(pivot_point.is_nan()) return;
 
+    PolarPoint bottom_left_most = PolarPoint(
+                                    *min_element(input_points.begin(), input_points.end()),
+                                    this -> pivot_point);
+
+    angle reference_angle = bottom_left_most.get_p_angle();
+
     for(auto i: this -> input_points){
-        PolarPoint ppoint(i,this -> pivot_point);
+        PolarPoint ppoint(i, this -> pivot_point);
+        angle new_angle = ppoint.get_p_angle() - reference_angle;
+        new_angle += new_angle < 0? 2*PI : 0;
+        ppoint.set_p_angle(new_angle);
         (this -> scan_points).push_back(ppoint);
     }
+
     sort(scan_points.begin(), scan_points.begin() + scan_points.size());
     scan_points = filter_points(scan_points);
     
