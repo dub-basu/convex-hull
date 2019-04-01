@@ -158,7 +158,10 @@ bool LineSegment::is_nan(){
     return(start_point.is_nan() || end_point.is_nan());
 }
 
-PolarPoint::PolarPoint(){}
+PolarPoint::PolarPoint(){
+    this -> p_angle = NAN_ANGLE;
+    this -> p_distance = NAN_LEN;
+}
 
 PolarPoint::PolarPoint(Point pt, Point origin){
     x = pt.x;

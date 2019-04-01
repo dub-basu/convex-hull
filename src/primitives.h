@@ -14,6 +14,7 @@ typedef long double angle;
                         std::numeric_limits<coordinate>::quiet_NaN())
 #define NAN_LINE LineSegment(NAN_POINT, NAN_POINT)
 #define NAN_ANGLE std::numeric_limits<angle>::quiet_NaN()
+#define NAN_LEN std::numeric_limits<len>::quiet_NaN()
 #define PI 3.14159265358979323846
 
 class Point{
