@@ -35,8 +35,13 @@ Point JarvisMarch::find_next_point(Point& pivot_point){
 
     PolarPoint next_p_pt;
     for(auto p_pt: data_points){
-        if(p_pt.get_p_angle() >= threshold_angle and p_pt < next_p_pt){
-            next_p_pt = p_pt;
+        if(p_pt.get_p_angle() >= threshold_angle){
+            if(Point::are_collinear(next_p_pt, pivot_point, p_pt)){
+                next_p_pt = next_p_pt.get_p_distance() > p_pt.get_p_distance() ? next_p_pt : p_pt;
+            }
+            else if(p_pt < next_p_pt){
+                next_p_pt = p_pt;
+            }
         }
     }
     this -> threshold_angle = next_p_pt.get_p_angle();
