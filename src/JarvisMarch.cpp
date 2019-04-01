@@ -24,6 +24,8 @@ void JarvisMarch::compute_convex_hull(){
         ch_points.push_back(next_point);
         next_point = find_next_point(next_point);
     }while(next_point != this -> starting_point);
+
+    if(ch_points.size() < 3) ch_points.clear();
 }
 
 Point JarvisMarch::find_next_point(Point& pivot_point){
