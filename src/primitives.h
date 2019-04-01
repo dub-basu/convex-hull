@@ -29,6 +29,7 @@ class Point{
         Point operator- (const Point& ) const;
         len euclidean_distance(Point);
         static angle angle_between_vectors(Point&, Point&);
+        static bool are_collinear(Point, Point, Point);
         friend std::ostream& operator<<(std::ostream& os, const Point& pt);
 
 };

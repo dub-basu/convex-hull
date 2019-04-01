@@ -72,14 +72,6 @@ std::vector<PolarPoint> GrahamScan::get_ch_points(){
     return(this -> ch_points);
 }
 
-bool GrahamScan::are_collinear(Point pt1, Point pt2, Point pt3){
-    len det_val =   pt1.x * (pt2.y - pt3.y) +  
-                    pt2.x * (pt3.y - pt1.y) +  
-                    pt3.x * (pt1.y - pt2.y);
-    if(det_val == 0) return true;
-    else return false;
-}
-
 std::vector<PolarPoint> GrahamScan::filter_points(std::vector<PolarPoint>& scan_points){
     std::vector<PolarPoint> filtered_points;
     angle previous_checked = -1;
@@ -103,7 +95,7 @@ Point GrahamScan::find_pivot_point(){
         // }
         // std::cout << std::endl;
 
-        if(are_collinear(triplet[0], triplet[1], triplet[2])) continue;
+        if(Point::are_collinear(triplet[0], triplet[1], triplet[2])) continue;
         else{
             pivot_point.x = ( triplet[0].x + triplet[1].x + triplet[2].x ) / 3;
             pivot_point.y = ( triplet[0].y + triplet[1].y + triplet[2].y ) / 3;

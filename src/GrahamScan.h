@@ -12,7 +12,6 @@ class GrahamScan{
         std::vector<PolarPoint> scan_points;
         std::vector<PolarPoint> ch_points;
         
-        bool are_collinear(Point, Point, Point);
         std::vector<PolarPoint> filter_points(std::vector<PolarPoint>&);
         Point find_pivot_point();
         bool is_stack_top_valid(std::stack<PolarPoint>&);

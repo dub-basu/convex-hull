@@ -52,6 +52,14 @@ angle Point::angle_between_vectors(Point& pt1, Point& pt2){
     return(acos(cos_theta));
 }
 
+bool Point::are_collinear(Point pt1, Point pt2, Point pt3){
+    len det_val =   pt1.x * (pt2.y - pt3.y) +
+                    pt2.x * (pt3.y - pt1.y) +
+                    pt3.x * (pt1.y - pt2.y);
+    if(det_val == 0) return true;
+    else return false;
+}
+
 std::ostream& operator<<(std::ostream& os, const Point& pt){
     os << "(" << pt.x << ", " << pt.y << ")";
     return os;
