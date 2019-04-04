@@ -1,6 +1,7 @@
 #include<iostream>
 #include<mutex>
 #include<thread>
+#include<fstream>
 #include "primitives.h"
 #include "GrahamScan.h"
 #include "JarvisMarch.h"
@@ -9,6 +10,7 @@
 #include "median_finding.cpp"
 
 #define VISUALISE true
+#define DEFAULT_FILENAME "../testcases/default_case.txt"
 
 using namespace std;
 
@@ -16,7 +18,23 @@ void init_graphix_class(ConvexHullGraphix* x){
     x->loopie();
 }
 
-int main(){
+void get_lines_from_file(string filename, vector<Point>& points){
+    points.clear();
+    ifstream fin;
+    fin.open(filename, ios::in);
+    string pt_str;
+    string comma = ",";
+    while(fin >> pt_str){
+        pt_str = pt_str.substr(1, pt_str.size() - 2);
+        string p1_x = pt_str.substr(0,pt_str.find(comma));
+        string p1_y = pt_str.substr(pt_str.find(comma) + 1, pt_str.size());
+        Point pt(stold(p1_x), stold(p1_y));
+        points.push_back(pt);
+    }
+    fin.close();
+}
+
+int main(int argc, char** argv){
     
     std::mutex mtx;
     ConvexHullGraphix* gfx_ptr;
@@ -28,67 +46,44 @@ int main(){
         gfx_ptr = NULL;
     }
 
-    // TODO: Case fails for Jarvis March. Fix.
-//     Point p1(1,1);
-//     Point p2(2,2);
-//     Point p3(3,3);
-//     Point p4(4,4);
-//     Point p5(5,5);
-//     Point p6(6,6);
-//
-//    Point p1(1,1);
-//    Point p2(0,2);
-//    Point p3(-1,1);
-//    Point p4(-1,-1);
-//    Point p5(0,3);
-//    Point p6(1,-1);
-//
-//    // TODO: Case fails for Graham's Scan. Fix.
-//     Point p1(-6,0);
-//     Point p2(-4,2);
-//     Point p3(0,0);
-//     Point p4(1,5);
-//     Point p5(1.5,3);
-//     Point p6(1.6,1);
-//     Point p7(2,4);
-//     Point p8(6,0);
-//
+    string filename;
+    if(argc > 1){
+        filename = argv[1];
+        cout << filename << endl;
+    } else {
+        filename = DEFAULT_FILENAME;
+    }
     vector<Point> points;
-    points.push_back(p1);
-    points.push_back(p2);
-    points.push_back(p3);
-    points.push_back(p4);
-    points.push_back(p5);
-    points.push_back(p6);
-    points.push_back(p7);
+    get_lines_from_file(filename, points);
 
-//    /* Graham's Scan */
-   GrahamScan gh_scan(points, gfx_ptr);
-   gh_scan.compute_convex_hull();
-   vector<PolarPoint> result;
-   result = gh_scan.get_ch_points();
-//
-//    /* Jarvis March */
-//    JarvisMarch jar_march(points, gfx_ptr);
-//    jar_march.compute_convex_hull();
-//    vector<Point> result;
-//    result = jar_march.get_ch_points();
-//
+    cout << "Input Points: " << endl;
+    for(auto i: points){
+        cout << i << ", " << endl;
+    }
+    cout << "------------" << endl;
+
+
+    /* Graham's Scan */
+    GrahamScan gh_scan(points, gfx_ptr);
+    gh_scan.compute_convex_hull();
+    vector<PolarPoint> result;
+    result = gh_scan.get_ch_points();
+
+    /* Jarvis March */
+    JarvisMarch jar_march(points, gfx_ptr);
+    jar_march.compute_convex_hull();
+    vector<Point> result;
+    result = jar_march.get_ch_points();
+
+    /* KirkpatrickSiedel */
+    KirkpatrickSiedel kps(points, gfx_ptr);
+    vector<Point> result = kps.compute();
+
+    /* Print Result */
+    cout << "Convex Hull points: " << endl;
     for(auto pt: result){
         cout << pt << endl;
     }
-//
-//    vector<int> a {1,2,3,4};
-//    //for(int i = 0; i < 456262; i++){ a.push_back(i); }
-//    //random_shuffle(a.begin(), a.end());
-
-    // KirkpatrickSiedel kps(points);
-    // vector<Point> hull = kps.compute();
-
-    // for(auto p : hull){
-    //     cout << p;
-    // }
-    // cout << "\n";
 
     if(VISUALISE) gfx_thread -> join();
 
