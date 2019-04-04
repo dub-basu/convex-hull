@@ -4,7 +4,13 @@
 
 GrahamScan::GrahamScan(){}
 
-GrahamScan::GrahamScan(std::vector<Point>& points){
+GrahamScan::GrahamScan(std::vector<Point>& points, ConvexHullGraphix* gfx){
+    if(gfx != NULL){
+        this -> visualise = true;
+        chGfx = gfx;
+    } else {
+        this -> visualise = false;
+    }
     set_input_points(points);
 }
 
@@ -12,6 +18,13 @@ void GrahamScan::set_input_points(std::vector<Point>& points){
     this -> input_points = points;
     if(input_points.size() < 3) return;
     pivot_point = find_pivot_point();
+
+    if(this -> visualise){
+        chGfx -> init_points(this -> input_points);
+        chGfx -> update_pivot_point(pivot_point);
+        chGfx -> render();
+    }
+
     prep_scan_points();
 }
 
@@ -26,14 +39,34 @@ void GrahamScan::compute_convex_hull(){
 
     for(int i=0;i<3;i++){
         // Initialize stack with 3 points
+
+        // add two edges 
+
         point_stack.push(*front);
         front++; 
+    }
+
+    if(this -> visualise){
+        // Draw starting 3 points present on the stack
+        std::stack<PolarPoint> temp_stack = point_stack;
+        Point pt1 = temp_stack.top(); temp_stack.pop();
+        Point pt2 = temp_stack.top(); temp_stack.pop();
+        chGfx -> add_edge(pt1, pt2);
+        pt1 = temp_stack.top();
+        chGfx -> add_edge(pt1, pt2);
+        chGfx -> render();
     }
 
     while(true){
         if(is_stack_top_valid(point_stack)){
             if(front > rear) break;
             else{
+
+                if(this -> visualise){
+                    chGfx -> add_edge(point_stack.top(), *front);
+                    chGfx -> render();
+                }
+
                 point_stack.push(*front);
                 front++;
             }
@@ -45,10 +78,20 @@ void GrahamScan::compute_convex_hull(){
             // std::cout << "(" << point_stack.top().x << "," << point_stack.top().y << ")" << std::endl;
             // std::cout << "^^^^^^^^^^\n\n";
 
+            // remove two edges
+            if(this -> visualise){
+                chGfx -> add_edge(temp1, point_stack.top());
+            }
+
+            // add one edge
+
             point_stack.pop();
             point_stack.push(temp1);
             if(point_stack.size() >= 3) continue;
             else{
+
+                // add edge
+
                 PolarPoint temp2 = point_stack.top(); point_stack.pop();
                 PolarPoint temp3 = point_stack.top(); point_stack.pop();
                 point_stack.push(*rear);

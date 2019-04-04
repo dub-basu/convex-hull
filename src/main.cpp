@@ -79,22 +79,6 @@ int main(){
     points.push_back(p6);
     points.push_back(p7);
 
-<<<<<<< HEAD
-    
-    /* Graham's Scan */
-    // GrahamScan gh_scan(points);
-    // gh_scan.compute_convex_hull();
-    // vector<PolarPoint> result;
-    // result = gh_scan.get_ch_points();
-
-    /* Jarvis March */
-    JarvisMarch jar_march(points, gfx_ptr);
-    jar_march.compute_convex_hull();
-    vector<Point> result;
-    result = jar_march.get_ch_points();
-=======
-
-//
 //    /* Graham's Scan */
 //    // GrahamScan gh_scan(points);
 //    // gh_scan.compute_convex_hull();
@@ -113,7 +97,6 @@ int main(){
 //    vector<int> a {1,2,3,4};
 //    //for(int i = 0; i < 456262; i++){ a.push_back(i); }
 //    //random_shuffle(a.begin(), a.end());
->>>>>>> c5bba96... Change main for testing kps
 
     KirkpatrickSiedel kps(points);
     vector<Point> hull = kps.compute();
