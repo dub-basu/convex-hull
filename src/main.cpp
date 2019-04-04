@@ -1,12 +1,23 @@
 #include<iostream>
+#include<mutex>
+#include<thread>
 #include "primitives.h"
 #include "GrahamScan.h"
 #include "JarvisMarch.h"
+#include "ConvexHullGraphix.h"
 
 using namespace std;
 
+void init_graphix_class(ConvexHullGraphix* x){
+    x->loopie();
+}
+
 int main(){
     
+    std::mutex mtx;
+    ConvexHullGraphix gfx(mtx);
+    thread t1(init_graphix_class, &gfx);
+
     // TODO: Case fails for Jarvis March. Fix.
     // Point p1(1,1);
     // Point p2(2,2);
@@ -50,13 +61,15 @@ int main(){
     // result = gh_scan.get_ch_points();
 
     /* Jarvis March */
-    JarvisMarch jar_march(points);
+    JarvisMarch jar_march(points, &gfx);
     jar_march.compute_convex_hull();
     vector<Point> result;
     result = jar_march.get_ch_points();
 
     for(auto pt: result)
         cout << pt << endl;
+
+    t1.join();
 
     return 0;
 }

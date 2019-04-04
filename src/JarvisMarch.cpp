@@ -3,12 +3,24 @@
 
 JarvisMarch::JarvisMarch(){}
 
-JarvisMarch::JarvisMarch(std::vector<Point>& points){
+JarvisMarch::JarvisMarch(std::vector<Point>& points, ConvexHullGraphix* gfx){
+    if(gfx != NULL){
+        this -> visualise = true;
+        chGfx = gfx;
+    } else {
+        this -> visualise = false;
+    }
     set_input_points(points);
 }
 
 void JarvisMarch::set_input_points(std::vector<Point>& points){
     this -> input_points = points;
+
+    if(this -> visualise){
+        chGfx -> init_points(points);
+        chGfx -> render();
+    }
+
     if(input_points.size() < 3) return;
     threshold_angle = -1;
 }
@@ -21,9 +33,29 @@ void JarvisMarch::compute_convex_hull(){
     // std::cout << "Starting Point = " << next_point << std::endl;
 
     do{
+
+        if(this -> visualise){
+            chGfx -> update_pivot_point(next_point);
+            chGfx -> render();
+        }
+
         ch_points.push_back(next_point);
-        next_point = find_next_point(next_point);
+        Point pt = find_next_point(next_point);
+
+        if(this -> visualise){
+            chGfx -> add_edge(next_point, pt);
+            chGfx -> render();
+        }
+
+        next_point = pt;
+
     }while(next_point != this -> starting_point);
+
+    Point p = NAN_POINT;
+    if(this -> visualise){
+        chGfx -> update_pivot_point(p);
+        chGfx -> render();
+    }
 
     if(ch_points.size() < 3) ch_points.clear();
 }
