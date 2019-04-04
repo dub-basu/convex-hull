@@ -1,14 +1,33 @@
 #include<iostream>
+#include<mutex>
+#include<thread>
 #include "primitives.h"
 #include "GrahamScan.h"
 #include "JarvisMarch.h"
 #include "KirkpatrickSiedel.h"
 #include "median_finding.cpp"
+#include "ConvexHullGraphix.h"
+
+#define VISUALISE true
 
 using namespace std;
 
+void init_graphix_class(ConvexHullGraphix* x){
+    x->loopie();
+}
+
 int main(){
     
+    std::mutex mtx;
+    ConvexHullGraphix* gfx_ptr;
+    thread* gfx_thread;
+    if(VISUALISE){
+        gfx_ptr = new ConvexHullGraphix(mtx);
+        gfx_thread = new thread(init_graphix_class, gfx_ptr);
+    } else {
+        gfx_ptr = NULL;
+    }
+
     // TODO: Case fails for Jarvis March. Fix.
 //     Point p1(1,1);
 //     Point p2(2,2);
@@ -91,4 +110,27 @@ int main(){
     }
     cout << "\n";
 
+<<<<<<< HEAD
 }
+=======
+    
+    /* Graham's Scan */
+    // GrahamScan gh_scan(points);
+    // gh_scan.compute_convex_hull();
+    // vector<PolarPoint> result;
+    // result = gh_scan.get_ch_points();
+
+    /* Jarvis March */
+    JarvisMarch jar_march(points, gfx_ptr);
+    jar_march.compute_convex_hull();
+    vector<Point> result;
+    result = jar_march.get_ch_points();
+
+    for(auto pt: result)
+        cout << pt << endl;
+
+    if(VISUALISE) gfx_thread -> join();
+
+    return 0;
+}
+>>>>>>> 6e0f002b66718eb476ac0edb1de97617b503eed8

@@ -14,6 +14,7 @@ typedef long double angle;
                         std::numeric_limits<coordinate>::quiet_NaN())
 #define NAN_LINE LineSegment(NAN_POINT, NAN_POINT)
 #define NAN_ANGLE std::numeric_limits<angle>::quiet_NaN()
+#define NAN_LEN std::numeric_limits<len>::quiet_NaN()
 #define PI 3.14159265358979323846
 
 class Point{
@@ -26,8 +27,10 @@ class Point{
         bool operator!= (const Point& p2);
         bool is_nan();
         bool operator< (const Point& right) const;
+        Point operator- (const Point& ) const;
         len euclidean_distance(Point);
         static angle angle_between_vectors(Point&, Point&);
+        static bool are_collinear(Point, Point, Point);
         friend std::ostream& operator<<(std::ostream& os, const Point& pt);
 
 };
@@ -64,6 +67,7 @@ class PolarPoint: public Point{
         angle get_p_angle() const;
         angle get_p_angle_degrees() const;
         bool operator< (const PolarPoint& right) const;
+        void set_p_angle(angle);
         // static angle angle_between_vectors(PolarPoint, PolarPoint);
 };
 

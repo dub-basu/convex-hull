@@ -29,6 +29,11 @@ bool Point::operator< (const Point& right) const{
         return x < right.x;
 }
 
+Point Point::operator- (const Point& right) const{
+    Point difference(x - right.x, y - right.y);
+    return(difference);
+}
+
 bool Point::is_nan(){
     return(std::isnan(x) || std::isnan(y));
 }
@@ -45,6 +50,14 @@ angle Point::angle_between_vectors(Point& pt1, Point& pt2){
     cos_theta /= pt1.euclidean_distance(origin);
     cos_theta /= pt2.euclidean_distance(origin);
     return(acos(cos_theta));
+}
+
+bool Point::are_collinear(Point pt1, Point pt2, Point pt3){
+    len det_val =   pt1.x * (pt2.y - pt3.y) +
+                    pt2.x * (pt3.y - pt1.y) +
+                    pt3.x * (pt1.y - pt2.y);
+    if(det_val == 0) return true;
+    else return false;
 }
 
 std::ostream& operator<<(std::ostream& os, const Point& pt){
@@ -166,6 +179,10 @@ coordinate LineSegment::slope() {
 
 
 PolarPoint::PolarPoint(){}
+PolarPoint::PolarPoint(){
+    this -> p_angle = NAN_ANGLE;
+    this -> p_distance = NAN_LEN;
+}
 
 PolarPoint::PolarPoint(Point pt, Point origin){
     x = pt.x;
@@ -196,4 +213,8 @@ bool PolarPoint::operator< (const PolarPoint& right) const{
         return false;
     else
         return this->get_p_distance() >= right.get_p_distance();
+}
+
+void PolarPoint::set_p_angle(angle new_angle){
+    this -> p_angle = new_angle;
 }

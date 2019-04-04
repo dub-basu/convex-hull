@@ -60,20 +60,16 @@ void GrahamScan::compute_convex_hull(){
         }
     }
 
+    point_stack.push(*(rear+1));
+    if(!is_stack_top_valid(point_stack)) point_stack.pop();
+    point_stack.pop();
+
     stack_to_ch_points(point_stack);
     sort(ch_points.begin(), ch_points.end());
 }
 
 std::vector<PolarPoint> GrahamScan::get_ch_points(){
     return(this -> ch_points);
-}
-
-bool GrahamScan::are_collinear(Point pt1, Point pt2, Point pt3){
-    len det_val =   pt1.x * (pt2.y - pt3.y) +  
-                    pt2.x * (pt3.y - pt1.y) +  
-                    pt3.x * (pt1.y - pt2.y);
-    if(det_val == 0) return true;
-    else return false;
 }
 
 std::vector<PolarPoint> GrahamScan::filter_points(std::vector<PolarPoint>& scan_points){
@@ -99,7 +95,7 @@ Point GrahamScan::find_pivot_point(){
         // }
         // std::cout << std::endl;
 
-        if(are_collinear(triplet[0], triplet[1], triplet[2])) continue;
+        if(Point::are_collinear(triplet[0], triplet[1], triplet[2])) continue;
         else{
             pivot_point.x = ( triplet[0].x + triplet[1].x + triplet[2].x ) / 3;
             pivot_point.y = ( triplet[0].y + triplet[1].y + triplet[2].y ) / 3;
@@ -147,10 +143,20 @@ bool GrahamScan::is_stack_top_valid(std::stack<PolarPoint>& point_stack){
 void GrahamScan::prep_scan_points(){
     if(pivot_point.is_nan()) return;
 
+    PolarPoint bottom_left_most = PolarPoint(
+                                    *min_element(input_points.begin(), input_points.end()),
+                                    this -> pivot_point);
+
+    angle reference_angle = bottom_left_most.get_p_angle();
+
     for(auto i: this -> input_points){
-        PolarPoint ppoint(i,this -> pivot_point);
+        PolarPoint ppoint(i, this -> pivot_point);
+        angle new_angle = ppoint.get_p_angle() - reference_angle;
+        new_angle += new_angle < 0? 2*PI : 0;
+        ppoint.set_p_angle(new_angle);
         (this -> scan_points).push_back(ppoint);
     }
+
     sort(scan_points.begin(), scan_points.begin() + scan_points.size());
     scan_points = filter_points(scan_points);
     
