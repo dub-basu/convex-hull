@@ -19,6 +19,8 @@ add_executable(convex-hull
                 ./src/JarvisMarch.cpp
                 ./src/Graphix.cpp
                 ./src/ConvexHullGraphix.cpp
+                ./src/median_finding.cpp 
+                ./src/KirkpatrickSiedel.cpp
             )
 
 target_link_libraries(convex-hull glfw ${OPENGL_LIBRARY})
