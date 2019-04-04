@@ -31,6 +31,4 @@ private:
 
 };
 
-
-
 #endif //CONVEX_HULL_KIRKPATRICKSIEDEL_H

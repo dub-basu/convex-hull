@@ -102,15 +102,13 @@ int main(){
 //    // result = gh_scan.get_ch_points();
 //
 //    /* Jarvis March */
-//    JarvisMarch jar_march(points);
+//    JarvisMarch jar_march(points, gfx_ptr);
 //    jar_march.compute_convex_hull();
 //    vector<Point> result;
 //    result = jar_march.get_ch_points();
 //
 //    for(auto pt: result)
 //        cout << pt << endl;
-//
-//    return 0;
 //
 //    vector<int> a {1,2,3,4};
 //    //for(int i = 0; i < 456262; i++){ a.push_back(i); }
@@ -124,5 +122,5 @@ int main(){
         cout << p;
     }
     cout << "\n";
-
+    return 0;
 }

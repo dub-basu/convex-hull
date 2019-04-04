@@ -181,9 +181,6 @@ coordinate LineSegment::slope() {
     return (start_point.y - end_point.y) / (start_point.x - end_point.x) ;
 }
 
-
-PolarPoint::PolarPoint(){}
-
 PolarPoint::PolarPoint(Point pt, Point origin){
     x = pt.x;
     y = pt.y;

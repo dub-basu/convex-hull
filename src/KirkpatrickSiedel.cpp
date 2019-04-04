@@ -47,8 +47,8 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperHull(vector<KpsPoint
         }
     }
 
-    vector<KpsPoint> leftHull = upperHull(leftPoints);
-    vector<KpsPoint> rightHull = upperHull(rightPoints);
+    vector<KpsPoint> leftHull = upperHull(leftPoints,upper);
+    vector<KpsPoint> rightHull = upperHull(rightPoints,upper);
 
     //leftHull.push_back(upper_bridge[0]);
     //leftHull.push_back(upper_bridge[1]);
@@ -195,7 +195,7 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::lowerHull(vector<KpsPoint
         points[i].y *= -1;
     }
 
-    vector<KpsPoint> inverted_hull = upperHull(points);
+    vector<KpsPoint> inverted_hull = upperHull(points,true);
 
     for(int i = 0; i < inverted_hull.size(); i++){
         inverted_hull[i].y *= -1;
@@ -263,7 +263,7 @@ vector<Point> KirkpatrickSiedel::compute() {
     }
 
     // Call upper Hull
-    vector<KpsPoint> upper_ch = upperHull(upper_points);
+    vector<KpsPoint> upper_ch = upperHull(upper_points,true);
 
     // Call lower Hull
     vector<KpsPoint> lower_ch = lowerHull(lower_points);
