@@ -110,27 +110,5 @@ int main(){
     }
     cout << "\n";
 
-<<<<<<< HEAD
+
 }
-=======
-    
-    /* Graham's Scan */
-    // GrahamScan gh_scan(points);
-    // gh_scan.compute_convex_hull();
-    // vector<PolarPoint> result;
-    // result = gh_scan.get_ch_points();
-
-    /* Jarvis March */
-    JarvisMarch jar_march(points, gfx_ptr);
-    jar_march.compute_convex_hull();
-    vector<Point> result;
-    result = jar_march.get_ch_points();
-
-    for(auto pt: result)
-        cout << pt << endl;
-
-    if(VISUALISE) gfx_thread -> join();
-
-    return 0;
-}
->>>>>>> 6e0f002b66718eb476ac0edb1de97617b503eed8

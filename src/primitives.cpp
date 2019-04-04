@@ -178,7 +178,6 @@ coordinate LineSegment::slope() {
 }
 
 
-PolarPoint::PolarPoint(){}
 PolarPoint::PolarPoint(){
     this -> p_angle = NAN_ANGLE;
     this -> p_distance = NAN_LEN;
