@@ -10,7 +10,6 @@ class JarvisMarch{
         Point find_next_point(Point&);
         angle threshold_angle;
         Point starting_point;
-        void compare_threshold(PolarPoint, PolarPoint);
     public:
         ConvexHullGraphix* chGfx;
         JarvisMarch();
