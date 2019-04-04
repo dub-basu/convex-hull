@@ -48,6 +48,11 @@ void ConvexHullGraphix::remove_edge(LineSegment& ln){
     update_scene();
 }
 
+void ConvexHullGraphix::remove_edge(Point pt1, Point pt2){
+    LineSegment ln(pt1, pt2);
+    remove_edge(ln);
+}
+
 void ConvexHullGraphix::draw_edges(){
     for(auto edge: this -> edges){
         draw_line(edge, EDGE_COLOR);

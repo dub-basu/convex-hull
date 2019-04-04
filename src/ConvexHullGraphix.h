@@ -32,6 +32,7 @@ class ConvexHullGraphix: public Graphix {
         void add_edge(LineSegment);
         void add_edge(Point, Point);
         void remove_edge(LineSegment&);
+        void remove_edge(Point, Point);
         void init_points(std::vector<Point> points);
         void update_event(Point);
 };
