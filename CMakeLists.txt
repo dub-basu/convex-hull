@@ -13,4 +13,5 @@ add_executable(convex-hull
                 ./src/primitives.cpp
                 ./src/GrahamScan.cpp
                 ./src/JarvisMarch.cpp
-            )
+                ./src/KirkpatrickSiedel.cpp
+                ./src/median_finding.cpp )

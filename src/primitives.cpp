@@ -128,7 +128,7 @@ Point LineSegment::end_pt(){
     return(end_point);
 }
 
-Point LineSegment::y_projection(Point pt) const{
+Point LineSegment::horizontal_projection(const Point &pt) const{
     if(end_point.y == start_point.y){
         return NAN_POINT;
     }
@@ -141,9 +141,29 @@ Point LineSegment::y_projection(Point pt) const{
     }
 }
 
+Point LineSegment::vertical_projection(const Point &pt) const {
+    if(start_point.x == end_point.x){
+        return NAN_POINT;
+    }
+    else{
+        coordinate y_coord = (pt.x - start_point.x) / (end_point.x - start_point.x);
+        y_coord *= (end_point.y - start_point.y);
+        y_coord += start_point.y;
+        Point retPt = Point(pt.x, y_coord);
+        return this -> contains_point(retPt) ? retPt : NAN_POINT ;
+    }
+
+    //return Point();
+}
+
 bool LineSegment::is_nan(){
     return(start_point.is_nan() || end_point.is_nan());
 }
+
+coordinate LineSegment::slope() {
+    return (start_point.y - end_point.y) / (start_point.x - end_point.x) ;
+}
+
 
 PolarPoint::PolarPoint(){}
 
