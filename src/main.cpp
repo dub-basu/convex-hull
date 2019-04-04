@@ -6,6 +6,8 @@
 #include "JarvisMarch.h"
 #include "ConvexHullGraphix.h"
 
+#define VISUALISE true
+
 using namespace std;
 
 void init_graphix_class(ConvexHullGraphix* x){
@@ -15,8 +17,14 @@ void init_graphix_class(ConvexHullGraphix* x){
 int main(){
     
     std::mutex mtx;
-    ConvexHullGraphix gfx(mtx);
-    thread t1(init_graphix_class, &gfx);
+    ConvexHullGraphix* gfx_ptr;
+    thread* gfx_thread;
+    if(VISUALISE){
+        gfx_ptr = new ConvexHullGraphix(mtx);
+        gfx_thread = new thread(init_graphix_class, gfx_ptr);
+    } else {
+        gfx_ptr = NULL;
+    }
 
     // TODO: Case fails for Jarvis March. Fix.
     // Point p1(1,1);
@@ -61,7 +69,7 @@ int main(){
     // result = gh_scan.get_ch_points();
 
     /* Jarvis March */
-    JarvisMarch jar_march(points, &gfx);
+    JarvisMarch jar_march(points, gfx_ptr);
     jar_march.compute_convex_hull();
     vector<Point> result;
     result = jar_march.get_ch_points();
@@ -69,7 +77,7 @@ int main(){
     for(auto pt: result)
         cout << pt << endl;
 
-    t1.join();
+    if(VISUALISE) gfx_thread -> join();
 
     return 0;
 }
