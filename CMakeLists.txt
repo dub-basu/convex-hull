@@ -6,7 +6,7 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 3.2 REQUIRED)
 
 # flags
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread -Wall")
 
 # include
 include_directories( ./src )
