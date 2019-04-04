@@ -32,16 +32,12 @@ void GrahamScan::compute_convex_hull(){
     if(this->scan_points.size() < 3) return;
 
     std::stack<PolarPoint> point_stack;
-    
     std::vector<PolarPoint>::iterator front, rear;
     front = scan_points.begin();
     rear = scan_points.end() - 1;
 
     for(int i=0;i<3;i++){
         // Initialize stack with 3 points
-
-        // add two edges 
-
         point_stack.push(*front);
         front++; 
     }
@@ -49,12 +45,18 @@ void GrahamScan::compute_convex_hull(){
     if(this -> visualise){
         // Draw starting 3 points present on the stack
         std::stack<PolarPoint> temp_stack = point_stack;
-        Point pt1 = temp_stack.top(); temp_stack.pop();
-        Point pt2 = temp_stack.top(); temp_stack.pop();
+        PolarPoint pt1 = temp_stack.top(); temp_stack.pop();
+        PolarPoint pt2 = temp_stack.top(); temp_stack.pop();
         chGfx -> add_edge(pt1, pt2);
         pt1 = temp_stack.top();
-        chGfx -> add_edge(pt1, pt2);
+        pt1 = temp_stack.top();
+
+        chGfx -> add_edge(temp_stack.top(), pt2);
         chGfx -> render();
+
+        temp_stack.push(pt2);
+        temp_stack.push(pt1);
+
     }
 
     while(true){
@@ -77,23 +79,30 @@ void GrahamScan::compute_convex_hull(){
             // std:: cout << "\neliminating: " ;
             // std::cout << "(" << point_stack.top().x << "," << point_stack.top().y << ")" << std::endl;
             // std::cout << "^^^^^^^^^^\n\n";
-
-            // remove two edges
             if(this -> visualise){
+                chGfx -> remove_edge(temp1, point_stack.top());
+            }
+            
+            Point temp4 = point_stack.top(); point_stack.pop();
+
+            if(this -> visualise){
+                chGfx -> remove_edge(temp4, point_stack.top());
                 chGfx -> add_edge(temp1, point_stack.top());
+                chGfx -> render();
             }
 
-            // add one edge
-
-            point_stack.pop();
             point_stack.push(temp1);
             if(point_stack.size() >= 3) continue;
             else{
 
-                // add edge
-
                 PolarPoint temp2 = point_stack.top(); point_stack.pop();
                 PolarPoint temp3 = point_stack.top(); point_stack.pop();
+
+                if(this -> visualise){
+                    chGfx -> add_edge(temp3, *rear);
+                    chGfx -> render();
+                }
+
                 point_stack.push(*rear);
                 rear--;
                 point_stack.push(temp3);
@@ -103,10 +112,34 @@ void GrahamScan::compute_convex_hull(){
         }
     }
 
-    point_stack.push(*(rear+1));
-    if(!is_stack_top_valid(point_stack)) point_stack.pop();
-    point_stack.pop();
+    PolarPoint rear_next = *(rear+1);
 
+    if(rear_next.is_nan()){
+        if(this -> visualise){
+            chGfx -> add_edge(point_stack.top(), scan_points[0]);
+            chGfx -> render();
+        }
+        point_stack.push(scan_points[0]);
+    } else {
+        if(this -> visualise){
+            chGfx -> add_edge(point_stack.top(), rear_next);
+            chGfx -> render();
+        }
+        point_stack.push(rear_next);
+    }
+
+    if(!is_stack_top_valid(point_stack)){
+        Point pt1 = point_stack.top(); point_stack.pop();
+        Point pt2 = point_stack.top(); point_stack.pop();
+        if(this -> visualise){
+            chGfx -> remove_edge(pt1, pt2);
+            chGfx -> remove_edge(pt2, point_stack.top());
+            chGfx -> add_edge(pt1, point_stack.top());
+            chGfx -> render();
+        }
+    } else {
+        point_stack.pop();
+    }
     stack_to_ch_points(point_stack);
     sort(ch_points.begin(), ch_points.end());
 }

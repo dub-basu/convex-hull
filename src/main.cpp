@@ -53,23 +53,6 @@ int main(){
 //     Point p7(2,4);
 //     Point p8(6,0);
 //
-//    vector<Point> points;
-//    points.push_back(p1);
-//    points.push_back(p2);
-//    points.push_back(p3);
-//    points.push_back(p4);
-//    points.push_back(p5);
-//    points.push_back(p6);
-//    points.push_back(p7);
-//    points.push_back(p8);
-
-    Point p1(1,5);
-    Point p2(3,8);
-    Point p3(5,5);
-    Point p4(5,1);
-    Point p5(1,1);
-    Point p6(3,4);
-    Point p7(1.5,4);
     vector<Point> points;
     points.push_back(p1);
     points.push_back(p2);
@@ -80,10 +63,10 @@ int main(){
     points.push_back(p7);
 
 //    /* Graham's Scan */
-//    // GrahamScan gh_scan(points);
-//    // gh_scan.compute_convex_hull();
-//    // vector<PolarPoint> result;
-//    // result = gh_scan.get_ch_points();
+   GrahamScan gh_scan(points, gfx_ptr);
+   gh_scan.compute_convex_hull();
+   vector<PolarPoint> result;
+   result = gh_scan.get_ch_points();
 //
 //    /* Jarvis March */
 //    JarvisMarch jar_march(points, gfx_ptr);
@@ -91,19 +74,23 @@ int main(){
 //    vector<Point> result;
 //    result = jar_march.get_ch_points();
 //
-//    for(auto pt: result)
-//        cout << pt << endl;
+    for(auto pt: result){
+        cout << pt << endl;
+    }
 //
 //    vector<int> a {1,2,3,4};
 //    //for(int i = 0; i < 456262; i++){ a.push_back(i); }
 //    //random_shuffle(a.begin(), a.end());
 
-    KirkpatrickSiedel kps(points);
-    vector<Point> hull = kps.compute();
+    // KirkpatrickSiedel kps(points);
+    // vector<Point> hull = kps.compute();
 
-    for(auto p : hull){
-        cout << p;
-    }
-    cout << "\n";
+    // for(auto p : hull){
+    //     cout << p;
+    // }
+    // cout << "\n";
+
+    if(VISUALISE) gfx_thread -> join();
+
     return 0;
 }

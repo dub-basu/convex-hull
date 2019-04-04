@@ -23,7 +23,7 @@ class GrahamScan{
     public:
         ConvexHullGraphix* chGfx;
         GrahamScan();
-        GrahamScan(std::vector<Point>& points, ConvexHullGraphix* gfx = NULL);    
+        GrahamScan(std::vector<Point>& points, ConvexHullGraphix* gfx = NULL);
         void compute_convex_hull();
         std::vector<PolarPoint> get_ch_points(); 
         void set_input_points(std::vector<Point>& points);
