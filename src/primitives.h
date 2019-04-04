@@ -44,12 +44,15 @@ class LineSegment{
         LineSegment(Point p1, Point p2);
         bool contains_point(Point pt) const;
         Point intersects_at(LineSegment ls);
-        Point y_projection(Point pt) const;
+        Point horizontal_projection(const Point &pt) const;
+        Point vertical_projection(const Point &pt) const;
+
         bool operator== (const LineSegment& l2);
         //len length();
         Point start_pt();
         Point end_pt();
         bool is_nan();
+        coordinate slope();
 };
 
 class PolarPoint: public Point{
