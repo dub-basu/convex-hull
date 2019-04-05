@@ -10,7 +10,7 @@
 #include "median_finding.cpp"
 
 #define VISUALISE true
-#define DEFAULT_FILENAME "../testcases/default_case.txt"
+#define DEFAULT_FILENAME "../testcases/default_case1.txt"
 
 using namespace std;
 
@@ -64,18 +64,19 @@ int main(int argc, char** argv){
 
 
     /* Graham's Scan */
-    GrahamScan gh_scan(points, gfx_ptr);
-    gh_scan.compute_convex_hull();
-    vector<PolarPoint> result;
-    result = gh_scan.get_ch_points();
+    // GrahamScan gh_scan(points, gfx_ptr);
+    // gh_scan.compute_convex_hull();
+    // vector<PolarPoint> result;
+    // result = gh_scan.get_ch_points();
 
-    /* Jarvis March */
-    JarvisMarch jar_march(points, gfx_ptr);
-    jar_march.compute_convex_hull();
-    vector<Point> result;
-    result = jar_march.get_ch_points();
+    // /* Jarvis March */
+    // JarvisMarch jar_march(points, gfx_ptr);
+    // jar_march.compute_convex_hull();
+    // vector<Point> result;
+    // result = jar_march.get_ch_points();
 
     /* KirkpatrickSiedel */
+    
     KirkpatrickSiedel kps(points, gfx_ptr);
     vector<Point> result = kps.compute();
 
@@ -84,6 +85,12 @@ int main(int argc, char** argv){
     for(auto pt: result){
         cout << pt << endl;
     }
+
+    // KirkpatrickSiedel::KpsPoint p1(Point(-5,-2)), p2(Point(-1,-1)), p3(Point(-1,1));
+    // vector<KirkpatrickSiedel::KpsPoint> arr{p1,p2,p3};
+    // KirkpatrickSiedel k(vector<Point>(),NULL);
+    // vector<KirkpatrickSiedel::KpsPoint> p = k.upperBridge(arr,-1);
+    // cout << p[0] << p[1] << "\n";
 
     if(VISUALISE) gfx_thread -> join();
 

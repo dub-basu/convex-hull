@@ -7,7 +7,15 @@
 #define ERROR 0.000001
 
 vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperHull(vector<KpsPoint> points, bool upper) {
-
+    // cout << "UPPER HULLING\t";
+    // for (auto p : points){
+    //     cout << p;
+    // }
+    // cout << "\n";
+    
+    if (points.size() == 0){
+        return vector<KpsPoint>();
+    }
     if (points.size() == 1){
         return vector<KpsPoint>{points[0]};
     }
@@ -17,12 +25,24 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperHull(vector<KpsPoint
         // Else make 2 dummy points, with same x coordinate and -1*y coordinate of old point
         // Draw them. Do not change the originals
         KpsPoint left = points[0], right = points[1];
-
+              
         if(left.x == right.x){
             if(left.y > right.y) {return vector<KpsPoint>{left} ;}
-            else {return vector<KpsPoint> {left} ;}
+            else {return vector<KpsPoint> {right} ;}
         }
-
+        if(visualise){
+            if(upper){
+                chGfx->add_edge(points[0],points[1]);
+            }
+            else{
+                KpsPoint l = points[0];
+                l.y *= -1;
+                KpsPoint r = points[1];
+                r.y *= -1;
+                chGfx->add_edge(l,r);
+            }
+            chGfx->render();
+        }
         if(left.x > right.x){ swap(left,right); }
         return vector<KpsPoint>{left,right};
     }
@@ -38,6 +58,7 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperHull(vector<KpsPoint
 
     vector<KpsPoint> upper_bridge = upperBridge(points, x_split);
 
+        
     for(auto p : points) {
         if(p.x <= upper_bridge[0].x){
             leftPoints.push_back(p);
@@ -46,9 +67,47 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperHull(vector<KpsPoint
             rightPoints.push_back(p);
         }
     }
+    if (leftPoints.size() == 0){
+        rightPoints.clear();
+        for(auto p : points) {
+            if(p.x <= upper_bridge[0].x){
+                leftPoints.push_back(p);
+            }
+            else {
+                rightPoints.push_back(p);
+            }
+        } 
+    }
+    else if(rightPoints.size() == 0){
+        leftPoints.clear();
+        for(auto p : points) {
+            if(p.x < upper_bridge[0].x){
+                leftPoints.push_back(p);
+            }
+            else {
+                rightPoints.push_back(p);
+            }
+        }
+    }
+
+    if(leftPoints.size() == 0 || rightPoints.size() == 0){
+        KpsPoint maxp = points[0];
+        for(auto p : points){
+            if (maxp.y < p.y){maxp = p;}
+        }
+        return vector<KpsPoint>{maxp};
+    }
+
 
     vector<KpsPoint> leftHull = upperHull(leftPoints,upper);
     vector<KpsPoint> rightHull = upperHull(rightPoints,upper);
+
+    if (leftHull.size() == 0){
+        
+    }
+    else if (rightHull.size() == 0){
+
+    }
 
     //leftHull.push_back(upper_bridge[0]);
     //leftHull.push_back(upper_bridge[1]);
@@ -57,19 +116,31 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperHull(vector<KpsPoint
         leftHull.push_back(r);
     }
 
+    if(this -> visualise){
+        //chGfx ->
+        for(int i = 0; i < leftHull.size() - 1; i++){
+            if(upper){
+                chGfx->add_edge(leftHull[i],leftHull[i+1]);
+            }
+            else{
+                //cout << "HERE";
+                KpsPoint left = leftHull[i];
+                left.y *= -1;
+                KpsPoint right = leftHull[i+1];
+                right.y *= -1;
+                chGfx->add_edge(left,right);
+                
+            }
+        }
+        chGfx->render(); 
+    }
+    
     return leftHull;
 
 }
 
 vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperBridge(vector<KpsPoint> points, coordinate l_x) {
     vector<KpsPoint> candidates;
-//    cout << "Splitting by" << l_x << ":\t";
-//
-//    for(auto p : points){
-//        cout << p;
-//    }
-//
-//    cout << "\n";
 
     list<pair<KpsPoint,KpsPoint>> pairs,new_pairs;
 
@@ -154,7 +225,7 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::upperBridge(vector<KpsPoi
     }
 
     if (pk.x <= l_x && pm.x > l_x){
-        cout << "Bridge = " << pk << pm << "\n";
+//        cout << "Bridge = " << pk << pm << "\n";
         return vector<KpsPoint>{pk,pm};
     }
 
@@ -194,9 +265,9 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::lowerHull(vector<KpsPoint
     for(int i = 0; i < points.size(); i++){
         points[i].y *= -1;
     }
-
-    vector<KpsPoint> inverted_hull = upperHull(points,true);
-
+    
+    vector<KpsPoint> inverted_hull = upperHull(points,false);
+    
     for(int i = 0; i < inverted_hull.size(); i++){
         inverted_hull[i].y *= -1;
     }
@@ -205,13 +276,22 @@ vector<KirkpatrickSiedel::KpsPoint> KirkpatrickSiedel::lowerHull(vector<KpsPoint
     //return vector<Point>();
 }
 
-KirkpatrickSiedel::KirkpatrickSiedel(vector<Point> v) {
+KirkpatrickSiedel::KirkpatrickSiedel(vector<Point> v, ConvexHullGraphix* chGfx) {
     KpsPoint::MAX = KpsPoint(Point(numeric_limits<float>::max(),
                                    numeric_limits<float>::max()) );
 
     points.reserve(v.size());
     for (auto p : v){
         points.push_back(KpsPoint(p));
+    }
+    if(chGfx != NULL){
+        this -> visualise = true;
+        this -> chGfx = chGfx;
+        this -> chGfx -> init_points(v);
+        this -> chGfx -> render();
+    }
+    else{
+        this -> visualise = false;
     }
 }
 
@@ -264,7 +344,7 @@ vector<Point> KirkpatrickSiedel::compute() {
 
     // Call upper Hull
     vector<KpsPoint> upper_ch = upperHull(upper_points,true);
-
+        
     // Call lower Hull
     vector<KpsPoint> lower_ch = lowerHull(lower_points);
 
@@ -273,6 +353,11 @@ vector<Point> KirkpatrickSiedel::compute() {
     for(int i = 0; i <  upper_ch.size();i++){hull.push_back(upper_points[i].getPoint());}
     for(int i = lower_ch.size() -1 ; i >= 0;i--){hull.push_back(lower_points[i].getPoint());}
 
+    if(visualise){
+        chGfx->add_edge(lower_ch[0],upper_ch[0]);
+        chGfx->add_edge(upper_ch[upper_ch.size()-1], lower_ch[lower_ch.size()-1]);
+        chGfx->render();
+    }
     return hull;
 }
 
