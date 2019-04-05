@@ -1,0 +1,64 @@
+\hypertarget{median__finding_8h}{}\section{/home/abid/\+D\+A\+A\+A/convex-\/hull/src/median\+\_\+finding.h File Reference}
+\label{median__finding_8h}\index{/home/abid/DAAA/convex-\/hull/src/median\_finding.h@{/home/abid/DAAA/convex-\/hull/src/median\_finding.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Kirkpatrick\+Siedel.\+h\char`\"{}}\newline
+Include dependency graph for median\+\_\+finding.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{median__finding_8h_af5e4c72d28d738bdc5ac44dc93af31ae}{find\+Median5size}} (std\+::vector$<$ T $>$ \&arr, int l, int r)
+\item 
+{\footnotesize template$<$class T $>$ }\\int \mbox{\hyperlink{median__finding_8h_a13953bb8318fab9d6416ddd506dc4258}{partition}} (vector$<$ T $>$ \&v, int l, int r, T x)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{median__finding_8h_a07d74019cff15aafead58db274db0976}{kth\+\_\+smallest}} (vector$<$ T $>$ v, int l, int r, int k)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{median__finding_8h_a0b7b22df017778dd75189ee4ae19f799}{find\+\_\+median}} (std\+::vector$<$ T $>$ input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{median__finding_8h_a0b7b22df017778dd75189ee4ae19f799}\label{median__finding_8h_a0b7b22df017778dd75189ee4ae19f799}} 
+\index{median\_finding.h@{median\_finding.h}!find\_median@{find\_median}}
+\index{find\_median@{find\_median}!median\_finding.h@{median\_finding.h}}
+\subsubsection{\texorpdfstring{find\_median()}{find\_median()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T find\+\_\+median (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{input }\end{DoxyParamCaption})}
+
+This function implements the median of median algorithm 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & class for which you have to find the median \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & an stl vector container of the object who\textquotesingle{}s median you want to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{median__finding_8h_af5e4c72d28d738bdc5ac44dc93af31ae}\label{median__finding_8h_af5e4c72d28d738bdc5ac44dc93af31ae}} 
+\index{median\_finding.h@{median\_finding.h}!findMedian5size@{findMedian5size}}
+\index{findMedian5size@{findMedian5size}!median\_finding.h@{median\_finding.h}}
+\subsubsection{\texorpdfstring{findMedian5size()}{findMedian5size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T find\+Median5size (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{arr,  }\item[{int}]{l,  }\item[{int}]{r }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{median__finding_8h_a07d74019cff15aafead58db274db0976}\label{median__finding_8h_a07d74019cff15aafead58db274db0976}} 
+\index{median\_finding.h@{median\_finding.h}!kth\_smallest@{kth\_smallest}}
+\index{kth\_smallest@{kth\_smallest}!median\_finding.h@{median\_finding.h}}
+\subsubsection{\texorpdfstring{kth\_smallest()}{kth\_smallest()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T kth\+\_\+smallest (\begin{DoxyParamCaption}\item[{vector$<$ T $>$}]{v,  }\item[{int}]{l,  }\item[{int}]{r,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{median__finding_8h_a13953bb8318fab9d6416ddd506dc4258}\label{median__finding_8h_a13953bb8318fab9d6416ddd506dc4258}} 
+\index{median\_finding.h@{median\_finding.h}!partition@{partition}}
+\index{partition@{partition}!median\_finding.h@{median\_finding.h}}
+\subsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int partition (\begin{DoxyParamCaption}\item[{vector$<$ T $>$ \&}]{v,  }\item[{int}]{l,  }\item[{int}]{r,  }\item[{T}]{x }\end{DoxyParamCaption})}
+

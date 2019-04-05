@@ -1,0 +1,208 @@
+\hypertarget{class_point}{}\section{Point Class Reference}
+\label{class_point}\index{Point@{Point}}
+
+
+{\ttfamily \#include $<$primitives.\+h$>$}
+
+
+
+Inheritance diagram for Point\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}} ()
+\item 
+\mbox{\hyperlink{class_point_af7373698b9fafc53b0a5d06e511642e1}{Point}} (\mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} x\+\_\+in, \mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} y\+\_\+in)
+\item 
+bool \mbox{\hyperlink{class_point_ac7bc64b9a683d5fb35780c739779f2fc}{operator==}} (const \mbox{\hyperlink{class_point}{Point}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_point_ade5f3908ec0e412aea8c3e12f5d0e26f}{operator!=}} (const \mbox{\hyperlink{class_point}{Point}} \&p2)
+\item 
+bool \mbox{\hyperlink{class_point_a2bc8aed929f6be2b543ba2f26b8a5f72}{is\+\_\+nan}} ()
+\item 
+bool \mbox{\hyperlink{class_point_a2d285a505e84d64a96974d5247e8ae7a}{operator$<$}} (const \mbox{\hyperlink{class_point}{Point}} \&right) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_point_aa3b47f3a3a36f3653f0b1e26dd197257}{operator-\/}} (const \mbox{\hyperlink{class_point}{Point}} \&) const
+\item 
+\mbox{\hyperlink{primitives_8h_a0daa439ba651ea0fd8d02392244db601}{len}} \mbox{\hyperlink{class_point_aa87b9392648b5001da929ba90f205c4d}{euclidean\+\_\+distance}} (\mbox{\hyperlink{class_point}{Point}})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}{angle}} \mbox{\hyperlink{class_point_a188e0a4a3b9df9e76c749f2139ad0611}{angle\+\_\+between\+\_\+vectors}} (\mbox{\hyperlink{class_point}{Point}} \&, \mbox{\hyperlink{class_point}{Point}} \&)
+\item 
+static bool \mbox{\hyperlink{class_point_a42bd18d21ff628166cc827871f7df960}{are\+\_\+collinear}} (\mbox{\hyperlink{class_point}{Point}}, \mbox{\hyperlink{class_point}{Point}}, \mbox{\hyperlink{class_point}{Point}})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} \mbox{\hyperlink{class_point_a2e5bf2da8d7f35ef2ca707ae5ec1929b}{x}}
+\item 
+\mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} \mbox{\hyperlink{class_point_a4390d37c7ed19ad07212fc84df2fe26e}{y}}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_point_a2c120859855730a5ff9d2eaee48471c5}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_point}{Point}} \&pt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_ad92f2337b839a94ce97dcdb439b4325a}\label{class_point_ad92f2337b839a94ce97dcdb439b4325a}} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor for \mbox{\hyperlink{class_point}{Point}} class \mbox{\Hypertarget{class_point_af7373698b9fafc53b0a5d06e511642e1}\label{class_point_af7373698b9fafc53b0a5d06e511642e1}} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}}}]{x\+\_\+in,  }\item[{\mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}}}]{y\+\_\+in }\end{DoxyParamCaption})}
+
+overloaded constructor 
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+in} & initialize x \\
+\hline
+{\em y\+\_\+in} & initialize y \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_a188e0a4a3b9df9e76c749f2139ad0611}\label{class_point_a188e0a4a3b9df9e76c749f2139ad0611}} 
+\index{Point@{Point}!angle\_between\_vectors@{angle\_between\_vectors}}
+\index{angle\_between\_vectors@{angle\_between\_vectors}!Point@{Point}}
+\subsubsection{\texorpdfstring{angle\_between\_vectors()}{angle\_between\_vectors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}{angle}} Point\+::angle\+\_\+between\+\_\+vectors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{pt1,  }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{pt2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Angle between vectors in \mbox{[}0,2$\ast$\+PI\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_point}{Point}}} & object \\
+\hline
+{\em \mbox{\hyperlink{class_point}{Point}}} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance between points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a42bd18d21ff628166cc827871f7df960}\label{class_point_a42bd18d21ff628166cc827871f7df960}} 
+\index{Point@{Point}!are\_collinear@{are\_collinear}}
+\index{are\_collinear@{are\_collinear}!Point@{Point}}
+\subsubsection{\texorpdfstring{are\_collinear()}{are\_collinear()}}
+{\footnotesize\ttfamily bool Point\+::are\+\_\+collinear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt1,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt2,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks for co-\/linearity 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_point}{Point}}} & object \\
+\hline
+{\em \mbox{\hyperlink{class_point}{Point}}} & object \\
+\hline
+{\em \mbox{\hyperlink{class_point}{Point}}} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean co-\/linear 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_aa87b9392648b5001da929ba90f205c4d}\label{class_point_aa87b9392648b5001da929ba90f205c4d}} 
+\index{Point@{Point}!euclidean\_distance@{euclidean\_distance}}
+\index{euclidean\_distance@{euclidean\_distance}!Point@{Point}}
+\subsubsection{\texorpdfstring{euclidean\_distance()}{euclidean\_distance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{primitives_8h_a0daa439ba651ea0fd8d02392244db601}{len}} Point\+::euclidean\+\_\+distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt }\end{DoxyParamCaption})}
+
+Euclidean distance 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{class_point}{Point}}} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance between points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a2bc8aed929f6be2b543ba2f26b8a5f72}\label{class_point_a2bc8aed929f6be2b543ba2f26b8a5f72}} 
+\index{Point@{Point}!is\_nan@{is\_nan}}
+\index{is\_nan@{is\_nan}!Point@{Point}}
+\subsubsection{\texorpdfstring{is\_nan()}{is\_nan()}}
+{\footnotesize\ttfamily bool Point\+::is\+\_\+nan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+checks for illegal line/point/angle/length \mbox{\Hypertarget{class_point_ade5f3908ec0e412aea8c3e12f5d0e26f}\label{class_point_ade5f3908ec0e412aea8c3e12f5d0e26f}} 
+\index{Point@{Point}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Point@{Point}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Point\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})}
+
+non equality 
+\begin{DoxyParams}{Parameters}
+{\em p2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean current object and param are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_aa3b47f3a3a36f3653f0b1e26dd197257}\label{class_point_aa3b47f3a3a36f3653f0b1e26dd197257}} 
+\index{Point@{Point}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Point@{Point}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Point\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{right }\end{DoxyParamCaption}) const}
+
+Difference \begin{DoxyReturn}{Returns}
+point object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a2d285a505e84d64a96974d5247e8ae7a}\label{class_point_a2d285a505e84d64a96974d5247e8ae7a}} 
+\index{Point@{Point}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Point@{Point}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Point\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{right }\end{DoxyParamCaption}) const}
+
+checks for point ordering according to algorithm design 
+\begin{DoxyParams}{Parameters}
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean current object less than parameter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_ac7bc64b9a683d5fb35780c739779f2fc}\label{class_point_ac7bc64b9a683d5fb35780c739779f2fc}} 
+\index{Point@{Point}!operator==@{operator==}}
+\index{operator==@{operator==}!Point@{Point}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Point\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p2 }\end{DoxyParamCaption})}
+
+equality 
+\begin{DoxyParams}{Parameters}
+{\em p2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean current object and param are equal 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_point_a2c120859855730a5ff9d2eaee48471c5}\label{class_point_a2c120859855730a5ff9d2eaee48471c5}} 
+\index{Point@{Point}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Point@{Point}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{pt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_point_a2e5bf2da8d7f35ef2ca707ae5ec1929b}\label{class_point_a2e5bf2da8d7f35ef2ca707ae5ec1929b}} 
+\index{Point@{Point}!x@{x}}
+\index{x@{x}!Point@{Point}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} Point\+::x}
+
+abcissa \mbox{\Hypertarget{class_point_a4390d37c7ed19ad07212fc84df2fe26e}\label{class_point_a4390d37c7ed19ad07212fc84df2fe26e}} 
+\index{Point@{Point}!y@{y}}
+\index{y@{y}!Point@{Point}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} Point\+::y}
+
+ordinate 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{primitives_8h}{primitives.\+h}}\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{primitives_8cpp}{primitives.\+cpp}}\end{DoxyCompactItemize}

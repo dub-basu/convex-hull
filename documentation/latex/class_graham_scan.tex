@@ -1,0 +1,86 @@
+\hypertarget{class_graham_scan}{}\section{Graham\+Scan Class Reference}
+\label{class_graham_scan}\index{GrahamScan@{GrahamScan}}
+
+
+{\ttfamily \#include $<$Graham\+Scan.\+h$>$}
+
+
+
+Collaboration diagram for Graham\+Scan\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graham_scan_a207506a925528a889c377b39a24d879f}{Graham\+Scan}} ()
+\item 
+\mbox{\hyperlink{class_graham_scan_afb51d5144cdee5df588528701b63de36}{Graham\+Scan}} (std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&points, \mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$gfx=N\+U\+LL)
+\item 
+void \mbox{\hyperlink{class_graham_scan_a38ecf7b830f7923c4d889fa126349a7e}{compute\+\_\+convex\+\_\+hull}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_polar_point}{Polar\+Point}} $>$ \mbox{\hyperlink{class_graham_scan_af42f09a4283ae9821917e13322be4b49}{get\+\_\+ch\+\_\+points}} ()
+\item 
+void \mbox{\hyperlink{class_graham_scan_a4e22ff4e4ee0cb57ae30bd06fd39871b}{set\+\_\+input\+\_\+points}} (std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&points)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$ \mbox{\hyperlink{class_graham_scan_a3c5dda4a0c904b22a179511cc1d879ce}{ch\+Gfx}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graham_scan_a207506a925528a889c377b39a24d879f}\label{class_graham_scan_a207506a925528a889c377b39a24d879f}} 
+\index{GrahamScan@{GrahamScan}!GrahamScan@{GrahamScan}}
+\index{GrahamScan@{GrahamScan}!GrahamScan@{GrahamScan}}
+\subsubsection{\texorpdfstring{GrahamScan()}{GrahamScan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Graham\+Scan\+::\+Graham\+Scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor for \mbox{\hyperlink{class_graham_scan}{Graham\+Scan}} class \mbox{\Hypertarget{class_graham_scan_afb51d5144cdee5df588528701b63de36}\label{class_graham_scan_afb51d5144cdee5df588528701b63de36}} 
+\index{GrahamScan@{GrahamScan}!GrahamScan@{GrahamScan}}
+\index{GrahamScan@{GrahamScan}!GrahamScan@{GrahamScan}}
+\subsubsection{\texorpdfstring{GrahamScan()}{GrahamScan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Graham\+Scan\+::\+Graham\+Scan (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&}]{points,  }\item[{\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$}]{gfx = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+overloaded constructor for \mbox{\hyperlink{class_graham_scan}{Graham\+Scan}} class 
+\begin{DoxyParams}{Parameters}
+{\em v} & initialize vector \\
+\hline
+{\em gfx} & initialize ch\+Gfx \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graham_scan_a38ecf7b830f7923c4d889fa126349a7e}\label{class_graham_scan_a38ecf7b830f7923c4d889fa126349a7e}} 
+\index{GrahamScan@{GrahamScan}!compute\_convex\_hull@{compute\_convex\_hull}}
+\index{compute\_convex\_hull@{compute\_convex\_hull}!GrahamScan@{GrahamScan}}
+\subsubsection{\texorpdfstring{compute\_convex\_hull()}{compute\_convex\_hull()}}
+{\footnotesize\ttfamily void Graham\+Scan\+::compute\+\_\+convex\+\_\+hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+computes convex hull and stores in in ch\+\_\+points \mbox{\Hypertarget{class_graham_scan_af42f09a4283ae9821917e13322be4b49}\label{class_graham_scan_af42f09a4283ae9821917e13322be4b49}} 
+\index{GrahamScan@{GrahamScan}!get\_ch\_points@{get\_ch\_points}}
+\index{get\_ch\_points@{get\_ch\_points}!GrahamScan@{GrahamScan}}
+\subsubsection{\texorpdfstring{get\_ch\_points()}{get\_ch\_points()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_polar_point}{Polar\+Point}} $>$ Graham\+Scan\+::get\+\_\+ch\+\_\+points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+accessor method for hull vector \mbox{\Hypertarget{class_graham_scan_a4e22ff4e4ee0cb57ae30bd06fd39871b}\label{class_graham_scan_a4e22ff4e4ee0cb57ae30bd06fd39871b}} 
+\index{GrahamScan@{GrahamScan}!set\_input\_points@{set\_input\_points}}
+\index{set\_input\_points@{set\_input\_points}!GrahamScan@{GrahamScan}}
+\subsubsection{\texorpdfstring{set\_input\_points()}{set\_input\_points()}}
+{\footnotesize\ttfamily void Graham\+Scan\+::set\+\_\+input\+\_\+points (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+setter method for point vector 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graham_scan_a3c5dda4a0c904b22a179511cc1d879ce}\label{class_graham_scan_a3c5dda4a0c904b22a179511cc1d879ce}} 
+\index{GrahamScan@{GrahamScan}!chGfx@{chGfx}}
+\index{chGfx@{chGfx}!GrahamScan@{GrahamScan}}
+\subsubsection{\texorpdfstring{chGfx}{chGfx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}}$\ast$ Graham\+Scan\+::ch\+Gfx}
+
+graphics stuff 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_graham_scan_8h}{Graham\+Scan.\+h}}\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_graham_scan_8cpp}{Graham\+Scan.\+cpp}}\end{DoxyCompactItemize}

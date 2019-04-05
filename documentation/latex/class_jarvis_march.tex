@@ -1,0 +1,86 @@
+\hypertarget{class_jarvis_march}{}\section{Jarvis\+March Class Reference}
+\label{class_jarvis_march}\index{JarvisMarch@{JarvisMarch}}
+
+
+{\ttfamily \#include $<$Jarvis\+March.\+h$>$}
+
+
+
+Collaboration diagram for Jarvis\+March\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_jarvis_march_a077887259741d7c57e1f64ea9ce7b324}{Jarvis\+March}} ()
+\item 
+\mbox{\hyperlink{class_jarvis_march_a0f28b67cdc8868e9ccb84bbcc3ef340f}{Jarvis\+March}} (std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&, \mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$gfx=N\+U\+LL)
+\item 
+void \mbox{\hyperlink{class_jarvis_march_a5617c3acf6ab1f5ad7988e0c856740c3}{compute\+\_\+convex\+\_\+hull}} ()
+\item 
+void \mbox{\hyperlink{class_jarvis_march_a53ff2d27872fa533efb2ce222a9dde88}{set\+\_\+input\+\_\+points}} (std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&points)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_jarvis_march_ae07fa1d85d5be1e876baa79a0a15e6bf}{get\+\_\+ch\+\_\+points}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$ \mbox{\hyperlink{class_jarvis_march_a6fb3af00dde6115578e1accc2e8b953c}{ch\+Gfx}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_jarvis_march_a077887259741d7c57e1f64ea9ce7b324}\label{class_jarvis_march_a077887259741d7c57e1f64ea9ce7b324}} 
+\index{JarvisMarch@{JarvisMarch}!JarvisMarch@{JarvisMarch}}
+\index{JarvisMarch@{JarvisMarch}!JarvisMarch@{JarvisMarch}}
+\subsubsection{\texorpdfstring{JarvisMarch()}{JarvisMarch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Jarvis\+March\+::\+Jarvis\+March (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor for \mbox{\hyperlink{class_jarvis_march}{Jarvis\+March}} class \mbox{\Hypertarget{class_jarvis_march_a0f28b67cdc8868e9ccb84bbcc3ef340f}\label{class_jarvis_march_a0f28b67cdc8868e9ccb84bbcc3ef340f}} 
+\index{JarvisMarch@{JarvisMarch}!JarvisMarch@{JarvisMarch}}
+\index{JarvisMarch@{JarvisMarch}!JarvisMarch@{JarvisMarch}}
+\subsubsection{\texorpdfstring{JarvisMarch()}{JarvisMarch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Jarvis\+March\+::\+Jarvis\+March (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&}]{points,  }\item[{\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$}]{gfx = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+overloaded constructor for \mbox{\hyperlink{class_jarvis_march}{Jarvis\+March}} class 
+\begin{DoxyParams}{Parameters}
+{\em v} & initialize vector \\
+\hline
+{\em gfx} & initialize ch\+Gfx \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_jarvis_march_a5617c3acf6ab1f5ad7988e0c856740c3}\label{class_jarvis_march_a5617c3acf6ab1f5ad7988e0c856740c3}} 
+\index{JarvisMarch@{JarvisMarch}!compute\_convex\_hull@{compute\_convex\_hull}}
+\index{compute\_convex\_hull@{compute\_convex\_hull}!JarvisMarch@{JarvisMarch}}
+\subsubsection{\texorpdfstring{compute\_convex\_hull()}{compute\_convex\_hull()}}
+{\footnotesize\ttfamily void Jarvis\+March\+::compute\+\_\+convex\+\_\+hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+computes convex hull and stores in in ch\+\_\+points \mbox{\Hypertarget{class_jarvis_march_ae07fa1d85d5be1e876baa79a0a15e6bf}\label{class_jarvis_march_ae07fa1d85d5be1e876baa79a0a15e6bf}} 
+\index{JarvisMarch@{JarvisMarch}!get\_ch\_points@{get\_ch\_points}}
+\index{get\_ch\_points@{get\_ch\_points}!JarvisMarch@{JarvisMarch}}
+\subsubsection{\texorpdfstring{get\_ch\_points()}{get\_ch\_points()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ Jarvis\+March\+::get\+\_\+ch\+\_\+points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+accessor method for hull vector \mbox{\Hypertarget{class_jarvis_march_a53ff2d27872fa533efb2ce222a9dde88}\label{class_jarvis_march_a53ff2d27872fa533efb2ce222a9dde88}} 
+\index{JarvisMarch@{JarvisMarch}!set\_input\_points@{set\_input\_points}}
+\index{set\_input\_points@{set\_input\_points}!JarvisMarch@{JarvisMarch}}
+\subsubsection{\texorpdfstring{set\_input\_points()}{set\_input\_points()}}
+{\footnotesize\ttfamily void Jarvis\+March\+::set\+\_\+input\+\_\+points (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+setter method for point vector 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_jarvis_march_a6fb3af00dde6115578e1accc2e8b953c}\label{class_jarvis_march_a6fb3af00dde6115578e1accc2e8b953c}} 
+\index{JarvisMarch@{JarvisMarch}!chGfx@{chGfx}}
+\index{chGfx@{chGfx}!JarvisMarch@{JarvisMarch}}
+\subsubsection{\texorpdfstring{chGfx}{chGfx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}}$\ast$ Jarvis\+March\+::ch\+Gfx}
+
+graphics stuff 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_jarvis_march_8h}{Jarvis\+March.\+h}}\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_jarvis_march_8cpp}{Jarvis\+March.\+cpp}}\end{DoxyCompactItemize}

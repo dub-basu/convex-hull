@@ -1,0 +1,83 @@
+\hypertarget{main_8cpp}{}\section{/home/abid/\+D\+A\+A\+A/convex-\/hull/src/main.cpp File Reference}
+\label{main_8cpp}\index{/home/abid/DAAA/convex-\/hull/src/main.cpp@{/home/abid/DAAA/convex-\/hull/src/main.cpp}}
+
+
+Design and Analysis of Algorithms.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}primitives.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Graham\+Scan.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Jarvis\+March.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Convex\+Hull\+Graphix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Kirkpatrick\+Siedel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}median\+\_\+finding.\+cpp\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ad305621bb5bea4ee94514de3ff27db83}{V\+I\+S\+U\+A\+L\+I\+SE}}~true
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a1e3d694f7ffb0df80011cb7c5b205897}{D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+I\+L\+E\+N\+A\+ME}}~\char`\"{}../testcases/default\+\_\+case.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_ada3637dc7456ff49eb05e77adb5f59b3}{init\+\_\+graphix\+\_\+class}} (\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$x)
+\item 
+void \mbox{\hyperlink{main_8cpp_a4b43c51c859bed66317fe355b93b54fe}{get\+\_\+lines\+\_\+from\+\_\+file}} (string filename, vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&points)
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Design and Analysis of Algorithms. 
+
+\begin{DoxyAuthor}{Author}
+Kaustubh Welankar 
+
+Basu Dubey 
+
+Syed Abid Abdullah 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_a1e3d694f7ffb0df80011cb7c5b205897}\label{main_8cpp_a1e3d694f7ffb0df80011cb7c5b205897}} 
+\index{main.cpp@{main.cpp}!DEFAULT\_FILENAME@{DEFAULT\_FILENAME}}
+\index{DEFAULT\_FILENAME@{DEFAULT\_FILENAME}!main.cpp@{main.cpp}}
+\subsubsection{\texorpdfstring{DEFAULT\_FILENAME}{DEFAULT\_FILENAME}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+I\+L\+E\+N\+A\+ME~\char`\"{}../testcases/default\+\_\+case.\+txt\char`\"{}}
+
+\mbox{\Hypertarget{main_8cpp_ad305621bb5bea4ee94514de3ff27db83}\label{main_8cpp_ad305621bb5bea4ee94514de3ff27db83}} 
+\index{main.cpp@{main.cpp}!VISUALISE@{VISUALISE}}
+\index{VISUALISE@{VISUALISE}!main.cpp@{main.cpp}}
+\subsubsection{\texorpdfstring{VISUALISE}{VISUALISE}}
+{\footnotesize\ttfamily \#define V\+I\+S\+U\+A\+L\+I\+SE~true}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a4b43c51c859bed66317fe355b93b54fe}\label{main_8cpp_a4b43c51c859bed66317fe355b93b54fe}} 
+\index{main.cpp@{main.cpp}!get\_lines\_from\_file@{get\_lines\_from\_file}}
+\index{get\_lines\_from\_file@{get\_lines\_from\_file}!main.cpp@{main.cpp}}
+\subsubsection{\texorpdfstring{get\_lines\_from\_file()}{get\_lines\_from\_file()}}
+{\footnotesize\ttfamily void get\+\_\+lines\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{string}]{filename,  }\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_ada3637dc7456ff49eb05e77adb5f59b3}\label{main_8cpp_ada3637dc7456ff49eb05e77adb5f59b3}} 
+\index{main.cpp@{main.cpp}!init\_graphix\_class@{init\_graphix\_class}}
+\index{init\_graphix\_class@{init\_graphix\_class}!main.cpp@{main.cpp}}
+\subsubsection{\texorpdfstring{init\_graphix\_class()}{init\_graphix\_class()}}
+{\footnotesize\ttfamily void init\+\_\+graphix\+\_\+class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+

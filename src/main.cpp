@@ -1,3 +1,19 @@
+/**@file main.cpp
+ * @author Kaustubh Welankar
+ * @author Basu Dubey
+ * @author Syed Abid Abdullah
+ * @brief Design and Analysis of Algorithms
+ * \mainpage Description
+ * This is an implementation of three convex hull algorithms
+ * \section Instructions
+ * Consult readme.md
+ * \section Authors
+ * \verbatim
+  Basu Dubey			2016A7PS0136H
+  Kaustubh Welankar		2016A7PS0095H
+  Syed Abid Abdullah 	2016A7PS0562H
+  \endverbatim
+ */
 #include<iostream>
 #include<mutex>
 #include<thread>

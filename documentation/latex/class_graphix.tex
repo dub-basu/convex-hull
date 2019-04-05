@@ -1,0 +1,134 @@
+\hypertarget{class_graphix}{}\section{Graphix Class Reference}
+\label{class_graphix}\index{Graphix@{Graphix}}
+
+
+Class for handling graphics using Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$Graphix.\+h$>$}
+
+
+
+Inheritance diagram for Graphix\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graphix_a1d4cb173e0d22fee13a657489b7b55de}{Graphix}} (std\+::mutex \&mtx)
+\item 
+void \mbox{\hyperlink{class_graphix_a74af1cd957a0fc3b5e0ee1f951a994e1}{draw\+\_\+line}} (\mbox{\hyperlink{class_line_segment}{Line\+Segment}} line, G\+Lfloat red=1, G\+Lfloat green=0, G\+Lfloat blue=0)
+\item 
+void \mbox{\hyperlink{class_graphix_a9a1ebf0c6d508ce4686b9794c4dec871}{draw\+\_\+dashed\+\_\+line}} (\mbox{\hyperlink{class_line_segment}{Line\+Segment}} line, G\+Lfloat red=0, G\+Lfloat green=0, G\+Lfloat blue=0)
+\item 
+void \mbox{\hyperlink{class_graphix_af7b539b3ab40274dc2f89d060cba0c51}{loopie}} ()
+\item 
+void \mbox{\hyperlink{class_graphix_a3e24075d5ded3741a9c14a7978b721d8}{render}} ()
+\item 
+void \mbox{\hyperlink{class_graphix_a1ac1a5725a869ef074da6fe3cab29b0e}{clear}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \& \mbox{\hyperlink{class_graphix_ab2136667d30ca5f0017bceded579a803}{m\+\_\+mutex}}
+\item 
+G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_graphix_a8189df95428d2fda74b1becb84ed07c2}{window}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_graphix_ab883fc83301f2a1a9d55b7ed8828bf66}{pause\+\_\+flag}} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for handling graphics using Open\+GL. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graphix_a1d4cb173e0d22fee13a657489b7b55de}\label{class_graphix_a1d4cb173e0d22fee13a657489b7b55de}} 
+\index{Graphix@{Graphix}!Graphix@{Graphix}}
+\index{Graphix@{Graphix}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{Graphix()}{Graphix()}}
+{\footnotesize\ttfamily Graphix\+::\+Graphix (\begin{DoxyParamCaption}\item[{std\+::mutex \&}]{mtx }\end{DoxyParamCaption})}
+
+Constructor. Creates a window instance with default parameters. Ideally runs on a separate thread from the thread executing the core algorithm. Accept a reference to a mutex. Mutex is used to maintain synchronization between core algorithm execution and graphics handling functions. 
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+mutex} & Reference to a mutex object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graphix_a1ac1a5725a869ef074da6fe3cab29b0e}\label{class_graphix_a1ac1a5725a869ef074da6fe3cab29b0e}} 
+\index{Graphix@{Graphix}!clear@{clear}}
+\index{clear@{clear}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Graphix\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Utility function to clear the window. 
+\begin{DoxyParams}{Parameters}
+{\em line} & Object of \mbox{\hyperlink{class_line_segment}{Line\+Segment}} class. Holds description of line segment to be drawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graphix_a9a1ebf0c6d508ce4686b9794c4dec871}\label{class_graphix_a9a1ebf0c6d508ce4686b9794c4dec871}} 
+\index{Graphix@{Graphix}!draw\_dashed\_line@{draw\_dashed\_line}}
+\index{draw\_dashed\_line@{draw\_dashed\_line}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{draw\_dashed\_line()}{draw\_dashed\_line()}}
+{\footnotesize\ttfamily void Graphix\+::draw\+\_\+dashed\+\_\+line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_segment}{Line\+Segment}}}]{line,  }\item[{G\+Lfloat}]{red = {\ttfamily 0},  }\item[{G\+Lfloat}]{green = {\ttfamily 0},  }\item[{G\+Lfloat}]{blue = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Utility function to draw a dashed/stippled line segment on the window. 
+\begin{DoxyParams}{Parameters}
+{\em line} & Object of \mbox{\hyperlink{class_line_segment}{Line\+Segment}} class. Holds description of line segment to be drawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graphix_a74af1cd957a0fc3b5e0ee1f951a994e1}\label{class_graphix_a74af1cd957a0fc3b5e0ee1f951a994e1}} 
+\index{Graphix@{Graphix}!draw\_line@{draw\_line}}
+\index{draw\_line@{draw\_line}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{draw\_line()}{draw\_line()}}
+{\footnotesize\ttfamily void Graphix\+::draw\+\_\+line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_segment}{Line\+Segment}}}]{line,  }\item[{G\+Lfloat}]{red = {\ttfamily 1},  }\item[{G\+Lfloat}]{green = {\ttfamily 0},  }\item[{G\+Lfloat}]{blue = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Utility function to draw a line segment on the window. 
+\begin{DoxyParams}{Parameters}
+{\em line} & Object of \mbox{\hyperlink{class_line_segment}{Line\+Segment}} class. Holds description of line segment to be drawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graphix_af7b539b3ab40274dc2f89d060cba0c51}\label{class_graphix_af7b539b3ab40274dc2f89d060cba0c51}} 
+\index{Graphix@{Graphix}!loopie@{loopie}}
+\index{loopie@{loopie}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{loopie()}{loopie()}}
+{\footnotesize\ttfamily void Graphix\+::loopie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Runs an infinite loop that listens to various events. \mbox{\Hypertarget{class_graphix_a3e24075d5ded3741a9c14a7978b721d8}\label{class_graphix_a3e24075d5ded3741a9c14a7978b721d8}} 
+\index{Graphix@{Graphix}!render@{render}}
+\index{render@{render}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Graphix\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Renders whatever is on the buffer to the window. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graphix_ab2136667d30ca5f0017bceded579a803}\label{class_graphix_ab2136667d30ca5f0017bceded579a803}} 
+\index{Graphix@{Graphix}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily std\+::mutex\& Graphix\+::m\+\_\+mutex}
+
+\mbox{\Hypertarget{class_graphix_ab883fc83301f2a1a9d55b7ed8828bf66}\label{class_graphix_ab883fc83301f2a1a9d55b7ed8828bf66}} 
+\index{Graphix@{Graphix}!pause\_flag@{pause\_flag}}
+\index{pause\_flag@{pause\_flag}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{pause\_flag}{pause\_flag}}
+{\footnotesize\ttfamily bool Graphix\+::pause\+\_\+flag = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_graphix_a8189df95428d2fda74b1becb84ed07c2}\label{class_graphix_a8189df95428d2fda74b1becb84ed07c2}} 
+\index{Graphix@{Graphix}!window@{window}}
+\index{window@{window}!Graphix@{Graphix}}
+\subsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily G\+L\+F\+Wwindow$\ast$ Graphix\+::window}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_graphix_8h}{Graphix.\+h}}\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_graphix_8cpp}{Graphix.\+cpp}}\end{DoxyCompactItemize}

@@ -10,9 +10,14 @@ public:
 
     class KpsPoint : public Point{
     public:
+        /** constructor
+        *@param p 
+        */
         KpsPoint(Point p);
+
         bool operator< (KpsPoint& );
         bool operator<=(KpsPoint& );
+        
         static KpsPoint MAX;
         Point getPoint();
     };

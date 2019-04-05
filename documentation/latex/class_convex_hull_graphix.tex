@@ -1,0 +1,94 @@
+\hypertarget{class_convex_hull_graphix}{}\section{Convex\+Hull\+Graphix Class Reference}
+\label{class_convex_hull_graphix}\index{ConvexHullGraphix@{ConvexHullGraphix}}
+
+
+{\ttfamily \#include $<$Convex\+Hull\+Graphix.\+h$>$}
+
+
+
+Inheritance diagram for Convex\+Hull\+Graphix\+:
+% FIG 0
+
+
+Collaboration diagram for Convex\+Hull\+Graphix\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_a463b42e0cafea416fa9a193e5efed532}{update\+\_\+pivot\+\_\+point}} (\mbox{\hyperlink{class_point}{Point}} \&)
+\item 
+\mbox{\hyperlink{class_convex_hull_graphix_a0788aec48348b01f660d3f6e08724c0c}{Convex\+Hull\+Graphix}} (std\+::mutex \&mtx)
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_ab86fe28af236abd45c987599920bfe39}{add\+\_\+edge}} (\mbox{\hyperlink{class_line_segment}{Line\+Segment}})
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_abd57f96a83ba7c4aa4da7cc00bf1530f}{add\+\_\+edge}} (\mbox{\hyperlink{class_point}{Point}}, \mbox{\hyperlink{class_point}{Point}})
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_a80800d54bcbd5031eaef916d52c73139}{remove\+\_\+edge}} (\mbox{\hyperlink{class_line_segment}{Line\+Segment}} \&)
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_a35c4a800c524d5ff2001d3724791bf66}{remove\+\_\+edge}} (\mbox{\hyperlink{class_point}{Point}}, \mbox{\hyperlink{class_point}{Point}})
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_ac9c25b9e69637f4ffa4cb9515a0fb221}{init\+\_\+points}} (std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ points)
+\item 
+void \mbox{\hyperlink{class_convex_hull_graphix_a72101c075bb4fca0db552e888d1530b3}{update\+\_\+event}} (\mbox{\hyperlink{class_point}{Point}})
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_convex_hull_graphix_a0788aec48348b01f660d3f6e08724c0c}\label{class_convex_hull_graphix_a0788aec48348b01f660d3f6e08724c0c}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!ConvexHullGraphix@{ConvexHullGraphix}}
+\index{ConvexHullGraphix@{ConvexHullGraphix}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{ConvexHullGraphix()}{ConvexHullGraphix()}}
+{\footnotesize\ttfamily Convex\+Hull\+Graphix\+::\+Convex\+Hull\+Graphix (\begin{DoxyParamCaption}\item[{std\+::mutex \&}]{mtx }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_convex_hull_graphix_ab86fe28af236abd45c987599920bfe39}\label{class_convex_hull_graphix_ab86fe28af236abd45c987599920bfe39}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{add\_edge()}{add\_edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_segment}{Line\+Segment}}}]{ln }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_convex_hull_graphix_abd57f96a83ba7c4aa4da7cc00bf1530f}\label{class_convex_hull_graphix_abd57f96a83ba7c4aa4da7cc00bf1530f}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{add\_edge()}{add\_edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt1,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_convex_hull_graphix_ac9c25b9e69637f4ffa4cb9515a0fb221}\label{class_convex_hull_graphix_ac9c25b9e69637f4ffa4cb9515a0fb221}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!init\_points@{init\_points}}
+\index{init\_points@{init\_points}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{init\_points()}{init\_points()}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::init\+\_\+points (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_convex_hull_graphix_a80800d54bcbd5031eaef916d52c73139}\label{class_convex_hull_graphix_a80800d54bcbd5031eaef916d52c73139}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!remove\_edge@{remove\_edge}}
+\index{remove\_edge@{remove\_edge}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{remove\_edge()}{remove\_edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::remove\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_segment}{Line\+Segment}} \&}]{ln }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_convex_hull_graphix_a35c4a800c524d5ff2001d3724791bf66}\label{class_convex_hull_graphix_a35c4a800c524d5ff2001d3724791bf66}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!remove\_edge@{remove\_edge}}
+\index{remove\_edge@{remove\_edge}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{remove\_edge()}{remove\_edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::remove\+\_\+edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt1,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_convex_hull_graphix_a72101c075bb4fca0db552e888d1530b3}\label{class_convex_hull_graphix_a72101c075bb4fca0db552e888d1530b3}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!update\_event@{update\_event}}
+\index{update\_event@{update\_event}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{update\_event()}{update\_event()}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::update\+\_\+event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_convex_hull_graphix_a463b42e0cafea416fa9a193e5efed532}\label{class_convex_hull_graphix_a463b42e0cafea416fa9a193e5efed532}} 
+\index{ConvexHullGraphix@{ConvexHullGraphix}!update\_pivot\_point@{update\_pivot\_point}}
+\index{update\_pivot\_point@{update\_pivot\_point}!ConvexHullGraphix@{ConvexHullGraphix}}
+\subsubsection{\texorpdfstring{update\_pivot\_point()}{update\_pivot\_point()}}
+{\footnotesize\ttfamily void Convex\+Hull\+Graphix\+::update\+\_\+pivot\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{pt }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_convex_hull_graphix_8h}{Convex\+Hull\+Graphix.\+h}}\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{_convex_hull_graphix_8cpp}{Convex\+Hull\+Graphix.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+digraph "/home/abid/DAAA/convex-hull/src/primitives.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node5 [label="/home/abid/DAAA/convex\l-hull/src/primitives.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/abid/DAAA/convex\l-hull/src/Graphix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_graphix_8h.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/abid/DAAA/convex\l-hull/src/ConvexHullGraphix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_convex_hull_graphix_8h.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="/home/abid/DAAA/convex\l-hull/src/ConvexHullGraphix.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_convex_hull_graphix_8cpp.html",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="/home/abid/DAAA/convex\l-hull/src/GrahamScan.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_graham_scan_8h.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="/home/abid/DAAA/convex\l-hull/src/GrahamScan.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_graham_scan_8cpp.html",tooltip=" "];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="/home/abid/DAAA/convex\l-hull/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="Design and Analysis of Algorithms."];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="/home/abid/DAAA/convex\l-hull/src/JarvisMarch.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_jarvis_march_8h.html",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="/home/abid/DAAA/convex\l-hull/src/JarvisMarch.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_jarvis_march_8cpp.html",tooltip=" "];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="/home/abid/DAAA/convex\l-hull/src/Graphix.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_graphix_8cpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="/home/abid/DAAA/convex\l-hull/src/KirkpatrickSiedel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_kirkpatrick_siedel_8h.html",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="/home/abid/DAAA/convex\l-hull/src/KirkpatrickSiedel.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_kirkpatrick_siedel_8cpp.html",tooltip=" "];
+  Node15 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="/home/abid/DAAA/convex\l-hull/src/median_finding.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$median__finding_8h.html",tooltip=" "];
+  Node17 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="/home/abid/DAAA/convex\l-hull/src/median_finding.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$median__finding_8cpp.html",tooltip=" "];
+  Node18 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="/home/abid/DAAA/convex\l-hull/src/primitives.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$primitives_8cpp.html",tooltip=" "];
+}

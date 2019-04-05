@@ -1,0 +1,156 @@
+\hypertarget{class_line_segment}{}\section{Line\+Segment Class Reference}
+\label{class_line_segment}\index{LineSegment@{LineSegment}}
+
+
+{\ttfamily \#include $<$primitives.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_line_segment_a4c2da2ff2d3979f28bfcb24948a8e6a9}{Line\+Segment}} ()
+\item 
+\mbox{\hyperlink{class_line_segment_a691e185edf3aa7e2dc12307f9ef4be6b}{Line\+Segment}} (\mbox{\hyperlink{class_point}{Point}} p1, \mbox{\hyperlink{class_point}{Point}} p2)
+\item 
+bool \mbox{\hyperlink{class_line_segment_a8dc46fa1dd259befff8cea92232e2a29}{contains\+\_\+point}} (\mbox{\hyperlink{class_point}{Point}} pt) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_line_segment_a3bdc73ce4696a76b7c7dd143556c95b6}{intersects\+\_\+at}} (\mbox{\hyperlink{class_line_segment}{Line\+Segment}} ls)
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_line_segment_a25c84a7d07cfd4b594a0fd7b2b37dd18}{horizontal\+\_\+projection}} (const \mbox{\hyperlink{class_point}{Point}} \&pt) const
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_line_segment_ad057b30e155ee8a82c7aa425ba22682e}{vertical\+\_\+projection}} (const \mbox{\hyperlink{class_point}{Point}} \&pt) const
+\item 
+bool \mbox{\hyperlink{class_line_segment_ae73906b7230adbccf243c4b8dc6482b3}{operator==}} (const \mbox{\hyperlink{class_line_segment}{Line\+Segment}} \&l2)
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_line_segment_a63afdd3fd0d5a3dc145109a5fe7231c6}{start\+\_\+pt}} ()
+\item 
+\mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_line_segment_a7af4d5a73aa4f89275cda6ea2b5cfbb2}{end\+\_\+pt}} ()
+\item 
+bool \mbox{\hyperlink{class_line_segment_a3364f7089cf7b650efe389475ddd0f12}{is\+\_\+nan}} ()
+\item 
+\mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} \mbox{\hyperlink{class_line_segment_ad13450e781bedc9ee838726cb57efabb}{slope}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_line_segment_a4c2da2ff2d3979f28bfcb24948a8e6a9}\label{class_line_segment_a4c2da2ff2d3979f28bfcb24948a8e6a9}} 
+\index{LineSegment@{LineSegment}!LineSegment@{LineSegment}}
+\index{LineSegment@{LineSegment}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{LineSegment()}{LineSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Line\+Segment\+::\+Line\+Segment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor for \mbox{\hyperlink{class_line_segment}{Line\+Segment}} class \mbox{\Hypertarget{class_line_segment_a691e185edf3aa7e2dc12307f9ef4be6b}\label{class_line_segment_a691e185edf3aa7e2dc12307f9ef4be6b}} 
+\index{LineSegment@{LineSegment}!LineSegment@{LineSegment}}
+\index{LineSegment@{LineSegment}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{LineSegment()}{LineSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Line\+Segment\+::\+Line\+Segment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{p1,  }\item[{\mbox{\hyperlink{class_point}{Point}}}]{p2 }\end{DoxyParamCaption})}
+
+overloaded constructor 
+\begin{DoxyParams}{Parameters}
+{\em p1} & initialize start\+\_\+point \\
+\hline
+{\em p2} & initialize end\+\_\+point \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_line_segment_a8dc46fa1dd259befff8cea92232e2a29}\label{class_line_segment_a8dc46fa1dd259befff8cea92232e2a29}} 
+\index{LineSegment@{LineSegment}!contains\_point@{contains\_point}}
+\index{contains\_point@{contains\_point}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{contains\_point()}{contains\_point()}}
+{\footnotesize\ttfamily bool Line\+Segment\+::contains\+\_\+point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt }\end{DoxyParamCaption}) const}
+
+checks wheter point is on line 
+\begin{DoxyParams}{Parameters}
+{\em pt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_line_segment_a7af4d5a73aa4f89275cda6ea2b5cfbb2}\label{class_line_segment_a7af4d5a73aa4f89275cda6ea2b5cfbb2}} 
+\index{LineSegment@{LineSegment}!end\_pt@{end\_pt}}
+\index{end\_pt@{end\_pt}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{end\_pt()}{end\_pt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Line\+Segment\+::end\+\_\+pt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_line_segment_a25c84a7d07cfd4b594a0fd7b2b37dd18}\label{class_line_segment_a25c84a7d07cfd4b594a0fd7b2b37dd18}} 
+\index{LineSegment@{LineSegment}!horizontal\_projection@{horizontal\_projection}}
+\index{horizontal\_projection@{horizontal\_projection}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{horizontal\_projection()}{horizontal\_projection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Line\+Segment\+::horizontal\+\_\+projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{pt }\end{DoxyParamCaption}) const}
+
+Finds horizontal projection 
+\begin{DoxyParams}{Parameters}
+{\em pt} & \mbox{\hyperlink{class_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point}{Point}} of horizontal projection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_line_segment_a3bdc73ce4696a76b7c7dd143556c95b6}\label{class_line_segment_a3bdc73ce4696a76b7c7dd143556c95b6}} 
+\index{LineSegment@{LineSegment}!intersects\_at@{intersects\_at}}
+\index{intersects\_at@{intersects\_at}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{intersects\_at()}{intersects\_at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Line\+Segment\+::intersects\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_line_segment}{Line\+Segment}}}]{ls }\end{DoxyParamCaption})}
+
+checks wheter point is on line 
+\begin{DoxyParams}{Parameters}
+{\em ls} & \mbox{\hyperlink{class_line_segment}{Line\+Segment}} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point}{Point}} of intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_line_segment_a3364f7089cf7b650efe389475ddd0f12}\label{class_line_segment_a3364f7089cf7b650efe389475ddd0f12}} 
+\index{LineSegment@{LineSegment}!is\_nan@{is\_nan}}
+\index{is\_nan@{is\_nan}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{is\_nan()}{is\_nan()}}
+{\footnotesize\ttfamily bool Line\+Segment\+::is\+\_\+nan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+checks for illegal line/point/angle/length \mbox{\Hypertarget{class_line_segment_ae73906b7230adbccf243c4b8dc6482b3}\label{class_line_segment_ae73906b7230adbccf243c4b8dc6482b3}} 
+\index{LineSegment@{LineSegment}!operator==@{operator==}}
+\index{operator==@{operator==}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Line\+Segment\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line_segment}{Line\+Segment}} \&}]{l2 }\end{DoxyParamCaption})}
+
+checks for same line segment 
+\begin{DoxyParams}{Parameters}
+{\em l2} & \mbox{\hyperlink{class_line_segment}{Line\+Segment}} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean same line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_line_segment_ad13450e781bedc9ee838726cb57efabb}\label{class_line_segment_ad13450e781bedc9ee838726cb57efabb}} 
+\index{LineSegment@{LineSegment}!slope@{slope}}
+\index{slope@{slope}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{slope()}{slope()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}} Line\+Segment\+::slope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+slope of the line segment \mbox{\Hypertarget{class_line_segment_a63afdd3fd0d5a3dc145109a5fe7231c6}\label{class_line_segment_a63afdd3fd0d5a3dc145109a5fe7231c6}} 
+\index{LineSegment@{LineSegment}!start\_pt@{start\_pt}}
+\index{start\_pt@{start\_pt}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{start\_pt()}{start\_pt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Line\+Segment\+::start\+\_\+pt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_line_segment_ad057b30e155ee8a82c7aa425ba22682e}\label{class_line_segment_ad057b30e155ee8a82c7aa425ba22682e}} 
+\index{LineSegment@{LineSegment}!vertical\_projection@{vertical\_projection}}
+\index{vertical\_projection@{vertical\_projection}!LineSegment@{LineSegment}}
+\subsubsection{\texorpdfstring{vertical\_projection()}{vertical\_projection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}} Line\+Segment\+::vertical\+\_\+projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{pt }\end{DoxyParamCaption}) const}
+
+Finds vertical projection 
+\begin{DoxyParams}{Parameters}
+{\em pt} & \mbox{\hyperlink{class_point}{Point}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point}{Point}} of vertical projection 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{primitives_8h}{primitives.\+h}}\item 
+/home/abid/\+D\+A\+A\+A/convex-\/hull/src/\mbox{\hyperlink{primitives_8cpp}{primitives.\+cpp}}\end{DoxyCompactItemize}

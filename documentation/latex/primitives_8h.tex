@@ -1,0 +1,101 @@
+\hypertarget{primitives_8h}{}\section{/home/abid/\+D\+A\+A\+A/convex-\/hull/src/primitives.h File Reference}
+\label{primitives_8h}\index{/home/abid/DAAA/convex-\/hull/src/primitives.h@{/home/abid/DAAA/convex-\/hull/src/primitives.h}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for primitives.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_point}{Point}}
+\item 
+class \mbox{\hyperlink{class_line_segment}{Line\+Segment}}
+\item 
+class \mbox{\hyperlink{class_polar_point}{Polar\+Point}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}{N\+A\+N\+\_\+\+P\+O\+I\+NT}}
+\item 
+\#define \mbox{\hyperlink{primitives_8h_a69f5322ac53a382b28c3a46774322907}{N\+A\+N\+\_\+\+L\+I\+NE}}~\mbox{\hyperlink{class_line_segment}{Line\+Segment}}(\mbox{\hyperlink{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}{N\+A\+N\+\_\+\+P\+O\+I\+NT}}, \mbox{\hyperlink{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}{N\+A\+N\+\_\+\+P\+O\+I\+NT}})
+\item 
+\#define \mbox{\hyperlink{primitives_8h_a34cb6479c8b96a9f0d305ff4e6576351}{N\+A\+N\+\_\+\+A\+N\+G\+LE}}~std\+::numeric\+\_\+limits$<$\mbox{\hyperlink{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}{angle}}$>$\+::quiet\+\_\+\+NaN()
+\item 
+\#define \mbox{\hyperlink{primitives_8h_a9fe96ff1b6a77c64ca46bcd545e87c96}{N\+A\+N\+\_\+\+L\+EN}}~std\+::numeric\+\_\+limits$<$\mbox{\hyperlink{primitives_8h_a0daa439ba651ea0fd8d02392244db601}{len}}$>$\+::quiet\+\_\+\+NaN()
+\item 
+\#define \mbox{\hyperlink{primitives_8h_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979323846
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long double \mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}}
+\item 
+typedef long double \mbox{\hyperlink{primitives_8h_a0daa439ba651ea0fd8d02392244db601}{len}}
+\item 
+typedef long double \mbox{\hyperlink{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}{angle}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{primitives_8h_a34cb6479c8b96a9f0d305ff4e6576351}\label{primitives_8h_a34cb6479c8b96a9f0d305ff4e6576351}} 
+\index{primitives.h@{primitives.h}!NAN\_ANGLE@{NAN\_ANGLE}}
+\index{NAN\_ANGLE@{NAN\_ANGLE}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{NAN\_ANGLE}{NAN\_ANGLE}}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+A\+N\+G\+LE~std\+::numeric\+\_\+limits$<$\mbox{\hyperlink{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}{angle}}$>$\+::quiet\+\_\+\+NaN()}
+
+\mbox{\Hypertarget{primitives_8h_a9fe96ff1b6a77c64ca46bcd545e87c96}\label{primitives_8h_a9fe96ff1b6a77c64ca46bcd545e87c96}} 
+\index{primitives.h@{primitives.h}!NAN\_LEN@{NAN\_LEN}}
+\index{NAN\_LEN@{NAN\_LEN}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{NAN\_LEN}{NAN\_LEN}}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+L\+EN~std\+::numeric\+\_\+limits$<$\mbox{\hyperlink{primitives_8h_a0daa439ba651ea0fd8d02392244db601}{len}}$>$\+::quiet\+\_\+\+NaN()}
+
+\mbox{\Hypertarget{primitives_8h_a69f5322ac53a382b28c3a46774322907}\label{primitives_8h_a69f5322ac53a382b28c3a46774322907}} 
+\index{primitives.h@{primitives.h}!NAN\_LINE@{NAN\_LINE}}
+\index{NAN\_LINE@{NAN\_LINE}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{NAN\_LINE}{NAN\_LINE}}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+L\+I\+NE~\mbox{\hyperlink{class_line_segment}{Line\+Segment}}(\mbox{\hyperlink{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}{N\+A\+N\+\_\+\+P\+O\+I\+NT}}, \mbox{\hyperlink{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}{N\+A\+N\+\_\+\+P\+O\+I\+NT}})}
+
+\mbox{\Hypertarget{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}\label{primitives_8h_ab57866c3f70068bd67b27cedf50cf97a}} 
+\index{primitives.h@{primitives.h}!NAN\_POINT@{NAN\_POINT}}
+\index{NAN\_POINT@{NAN\_POINT}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{NAN\_POINT}{NAN\_POINT}}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+P\+O\+I\+NT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_point}{Point}}(std::numeric\_limits<coordinate>::quiet\_NaN(), \(\backslash\)}
+\DoxyCodeLine{                        std::numeric\_limits<coordinate>::quiet\_NaN())}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{primitives_8h_a598a3330b3c21701223ee0ca14316eca}\label{primitives_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\index{primitives.h@{primitives.h}!PI@{PI}}
+\index{PI@{PI}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+14159265358979323846}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}\label{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}} 
+\index{primitives.h@{primitives.h}!angle@{angle}}
+\index{angle@{angle}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily typedef long double \mbox{\hyperlink{primitives_8h_a41ee332ff1a31807cb838b616c186dd7}{angle}}}
+
+\mbox{\Hypertarget{primitives_8h_a9949b5198385a93773b854932cb22e08}\label{primitives_8h_a9949b5198385a93773b854932cb22e08}} 
+\index{primitives.h@{primitives.h}!coordinate@{coordinate}}
+\index{coordinate@{coordinate}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{coordinate}{coordinate}}
+{\footnotesize\ttfamily typedef long double \mbox{\hyperlink{primitives_8h_a9949b5198385a93773b854932cb22e08}{coordinate}}}
+
+\mbox{\Hypertarget{primitives_8h_a0daa439ba651ea0fd8d02392244db601}\label{primitives_8h_a0daa439ba651ea0fd8d02392244db601}} 
+\index{primitives.h@{primitives.h}!len@{len}}
+\index{len@{len}!primitives.h@{primitives.h}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily typedef long double \mbox{\hyperlink{primitives_8h_a0daa439ba651ea0fd8d02392244db601}{len}}}
+
