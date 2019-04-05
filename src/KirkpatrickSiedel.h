@@ -6,6 +6,10 @@
 #include "ConvexHullGraphix.h"
 
 using namespace std;
+/**
+ * \class KirkpatrickSiedel
+ * \brief Class for Kirkpatrick Siedel algorithm
+ */
 class KirkpatrickSiedel {
 public:
     ConvexHullGraphix* chGfx;
@@ -25,6 +29,10 @@ public:
 
     KirkpatrickSiedel(vector<Point> v, ConvexHullGraphix* = NULL);
 
+    /**
+    * Computes convex hull
+    * @return Hull Points vector
+    */
     vector<Point> compute();
 private:
     bool visualise;

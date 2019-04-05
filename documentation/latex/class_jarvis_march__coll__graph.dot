@@ -3,9 +3,9 @@ digraph "JarvisMarch"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="JarvisMarch",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="JarvisMarch",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class for Jarvis March algorithm."];
   Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" chGfx" ];
-  Node2 [label="ConvexHullGraphix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_convex_hull_graphix.html",tooltip=" "];
+  Node2 [label="ConvexHullGraphix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_convex_hull_graphix.html",tooltip="Class for Visualization."];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node3 [label="Graphix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_graphix.html",tooltip="Class for handling graphics using OpenGL."];
 }

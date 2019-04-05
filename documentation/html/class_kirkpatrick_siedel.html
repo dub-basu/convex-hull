@@ -32,7 +32,7 @@
    <div id="projectname">DAA Assignment 1
    &#160;<span id="projectnumber">0.0</span>
    </div>
-   <div id="projectbrief">Implementation of various Convex Hull algorithms</div>
+   <div id="projectbrief">Implementation of various convex hull algorithms</div>
   </td>
  </tr>
  </tbody>
@@ -90,13 +90,23 @@ $(document).ready(function(){initNavTree('class_kirkpatrick_siedel.html','');});
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_kirkpatrick_siedel-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">KirkpatrickSiedel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Class for Kirkpatrick Siedel algorithm.  
+ <a href="class_kirkpatrick_siedel.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_kirkpatrick_siedel_8h_source.html">KirkpatrickSiedel.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for KirkpatrickSiedel:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_kirkpatrick_siedel__coll__graph.png" border="0" usemap="#_kirkpatrick_siedel_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -105,14 +115,21 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac093d089049ebc7708e796f9c05dc0ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kirkpatrick_siedel.html#ac093d089049ebc7708e796f9c05dc0ff">KirkpatrickSiedel</a> (vector&lt; <a class="el" href="class_point.html">Point</a> &gt; v)</td></tr>
-<tr class="separator:ac093d089049ebc7708e796f9c05dc0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a565c7cf3c861544bc4a4360ba007ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kirkpatrick_siedel.html#a5a565c7cf3c861544bc4a4360ba007ca">KirkpatrickSiedel</a> (vector&lt; <a class="el" href="class_point.html">Point</a> &gt; v, <a class="el" href="class_convex_hull_graphix.html">ConvexHullGraphix</a> *=NULL)</td></tr>
+<tr class="separator:a5a565c7cf3c861544bc4a4360ba007ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac301f763865d166ed8e049547adeeb44"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_point.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kirkpatrick_siedel.html#ac301f763865d166ed8e049547adeeb44">compute</a> ()</td></tr>
 <tr class="separator:ac301f763865d166ed8e049547adeeb44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a408d71282f26da0ee4ba9d62a63e73d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_convex_hull_graphix.html">ConvexHullGraphix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_kirkpatrick_siedel.html#a408d71282f26da0ee4ba9d62a63e73d2">chGfx</a></td></tr>
+<tr class="separator:a408d71282f26da0ee4ba9d62a63e73d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac093d089049ebc7708e796f9c05dc0ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac093d089049ebc7708e796f9c05dc0ff">&#9670;&nbsp;</a></span>KirkpatrickSiedel()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for Kirkpatrick Siedel algorithm. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5a565c7cf3c861544bc4a4360ba007ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a565c7cf3c861544bc4a4360ba007ca">&#9670;&nbsp;</a></span>KirkpatrickSiedel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,8 +138,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">KirkpatrickSiedel::KirkpatrickSiedel </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="class_point.html">Point</a> &gt;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_convex_hull_graphix.html">ConvexHullGraphix</a> *&#160;</td>
+          <td class="paramname"><em>chGfx</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -141,6 +168,22 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Computes convex hull </p><dl class="section return"><dt>Returns</dt><dd>Hull Points vector </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a408d71282f26da0ee4ba9d62a63e73d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a408d71282f26da0ee4ba9d62a63e73d2">&#9670;&nbsp;</a></span>chGfx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_convex_hull_graphix.html">ConvexHullGraphix</a>* KirkpatrickSiedel::chGfx</td>
         </tr>
       </table>
 </div><div class="memdoc">

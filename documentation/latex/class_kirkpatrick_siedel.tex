@@ -2,8 +2,17 @@
 \label{class_kirkpatrick_siedel}\index{KirkpatrickSiedel@{KirkpatrickSiedel}}
 
 
+Class for Kirkpatrick Siedel algorithm.  
+
+
+
+
 {\ttfamily \#include $<$Kirkpatrick\+Siedel.\+h$>$}
 
+
+
+Collaboration diagram for Kirkpatrick\+Siedel\+:
+% FIG 0
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,18 +21,26 @@ class \mbox{\hyperlink{class_kirkpatrick_siedel_1_1_kps_point}{Kps\+Point}}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_kirkpatrick_siedel_ac093d089049ebc7708e796f9c05dc0ff}{Kirkpatrick\+Siedel}} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ v)
+\mbox{\hyperlink{class_kirkpatrick_siedel_a5a565c7cf3c861544bc4a4360ba007ca}{Kirkpatrick\+Siedel}} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ v, \mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$=N\+U\+LL)
 \item 
 vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_kirkpatrick_siedel_ac301f763865d166ed8e049547adeeb44}{compute}} ()
 \end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$ \mbox{\hyperlink{class_kirkpatrick_siedel_a408d71282f26da0ee4ba9d62a63e73d2}{ch\+Gfx}}
+\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Class for Kirkpatrick Siedel algorithm. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_kirkpatrick_siedel_ac093d089049ebc7708e796f9c05dc0ff}\label{class_kirkpatrick_siedel_ac093d089049ebc7708e796f9c05dc0ff}} 
+\mbox{\Hypertarget{class_kirkpatrick_siedel_a5a565c7cf3c861544bc4a4360ba007ca}\label{class_kirkpatrick_siedel_a5a565c7cf3c861544bc4a4360ba007ca}} 
 \index{KirkpatrickSiedel@{KirkpatrickSiedel}!KirkpatrickSiedel@{KirkpatrickSiedel}}
 \index{KirkpatrickSiedel@{KirkpatrickSiedel}!KirkpatrickSiedel@{KirkpatrickSiedel}}
 \subsubsection{\texorpdfstring{KirkpatrickSiedel()}{KirkpatrickSiedel()}}
-{\footnotesize\ttfamily Kirkpatrick\+Siedel\+::\+Kirkpatrick\+Siedel (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{v }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Kirkpatrick\+Siedel\+::\+Kirkpatrick\+Siedel (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{v,  }\item[{\mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}} $\ast$}]{ch\+Gfx = {\ttfamily NULL} }\end{DoxyParamCaption})}
 
 
 
@@ -33,6 +50,18 @@ vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_kirkp
 \index{compute@{compute}!KirkpatrickSiedel@{KirkpatrickSiedel}}
 \subsubsection{\texorpdfstring{compute()}{compute()}}
 {\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ Kirkpatrick\+Siedel\+::compute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Computes convex hull \begin{DoxyReturn}{Returns}
+Hull Points vector 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kirkpatrick_siedel_a408d71282f26da0ee4ba9d62a63e73d2}\label{class_kirkpatrick_siedel_a408d71282f26da0ee4ba9d62a63e73d2}} 
+\index{KirkpatrickSiedel@{KirkpatrickSiedel}!chGfx@{chGfx}}
+\index{chGfx@{chGfx}!KirkpatrickSiedel@{KirkpatrickSiedel}}
+\subsubsection{\texorpdfstring{chGfx}{chGfx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_convex_hull_graphix}{Convex\+Hull\+Graphix}}$\ast$ Kirkpatrick\+Siedel\+::ch\+Gfx}
 
 
 

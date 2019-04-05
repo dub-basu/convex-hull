@@ -23,6 +23,17 @@ digraph "/home/abid/DAAA/convex-hull/src/median_finding.cpp"
   Node8 [label="limits",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
   Node9 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ConvexHullGraphix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_convex_hull_graphix_8h.html",tooltip=" "];
+  Node10 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Graphix.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_graphix_8h.html",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="GLFW/glfw3.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="mutex",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node8 [color="midnightblue",fontsize="10",style="solid"];

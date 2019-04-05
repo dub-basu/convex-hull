@@ -2,6 +2,10 @@
 #include "primitives.h"
 #include "ConvexHullGraphix.h"
 
+/**
+ * \class JarvisMarch
+ * \brief Class for Jarvis March algorithm
+ */
 class JarvisMarch{
     private:
         bool visualise;/**< visualization on/off*/

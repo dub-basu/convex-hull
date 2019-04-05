@@ -5,6 +5,6 @@ digraph "KirkpatrickSiedel::KpsPoint"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node2 [label="KirkpatrickSiedel::\lKpsPoint",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Point",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_point.html",tooltip=" "];
+  Node3 [label="Point",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_point.html",tooltip="Class for Point definition."];
   Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" MAX" ,fontname="Helvetica"];
 }

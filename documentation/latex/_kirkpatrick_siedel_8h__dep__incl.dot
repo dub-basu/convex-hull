@@ -3,16 +3,16 @@ digraph "/home/abid/DAAA/convex-hull/src/KirkpatrickSiedel.h"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node7 [label="/home/abid/DAAA/convex\l-hull/src/KirkpatrickSiedel.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="/home/abid/DAAA/convex\l-hull/src/KirkpatrickSiedel.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_kirkpatrick_siedel_8cpp.html",tooltip=" "];
-  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node9 [label="/home/abid/DAAA/convex\l-hull/src/median_finding.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$median__finding_8h.html",tooltip=" "];
-  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node10 [label="/home/abid/DAAA/convex\l-hull/src/median_finding.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$median__finding_8cpp.html",tooltip=" "];
-  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node11 [label="/home/abid/DAAA/convex\l-hull/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="Design and Analysis of Algorithms."];
-  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="/home/abid/DAAA/convex\l-hull/src/KirkpatrickSiedel.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="/home/abid/DAAA/convex\l-hull/src/KirkpatrickSiedel.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_kirkpatrick_siedel_8cpp.html",tooltip=" "];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="/home/abid/DAAA/convex\l-hull/src/median_finding.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$median__finding_8h.html",tooltip=" "];
+  Node13 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="/home/abid/DAAA/convex\l-hull/src/median_finding.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$median__finding_8cpp.html",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="/home/abid/DAAA/convex\l-hull/src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="Design and Analysis of Algorithms."];
+  Node11 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
 }

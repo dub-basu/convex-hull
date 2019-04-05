@@ -6,6 +6,10 @@
 #include "primitives.h"
 #include "ConvexHullGraphix.h"
 
+/**
+ * \class GrahamScan
+ * \brief Class for Graham Scan algorithm
+ */
 class GrahamScan{
     private:
         bool visualise;/**< visualization on/off*/

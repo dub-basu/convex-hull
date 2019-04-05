@@ -11,6 +11,10 @@
 #include "Graphix.h"
 #include "primitives.h"
 
+/**
+ * \class ConvexHullGraphix
+ * \brief Class for Visualization
+ */
 class ConvexHullGraphix: public Graphix {
     private:
         

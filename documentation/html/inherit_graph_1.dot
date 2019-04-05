@@ -6,5 +6,5 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node0 [label="Graphix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_graphix.html",tooltip="Class for handling graphics using OpenGL."];
   Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ConvexHullGraphix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_convex_hull_graphix.html",tooltip=" "];
+  Node1 [label="ConvexHullGraphix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_convex_hull_graphix.html",tooltip="Class for Visualization."];
 }

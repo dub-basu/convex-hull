@@ -17,6 +17,10 @@ typedef long double angle;
 #define NAN_LEN std::numeric_limits<len>::quiet_NaN()
 #define PI 3.14159265358979323846
 
+/**
+ * \class Point
+ * \brief Class for Point definition
+ */
 class Point{
     public:
         coordinate x;/**< abcissa*/
@@ -91,6 +95,10 @@ class Point{
 
 };
 
+/**
+ * \class LineSegment
+ * \brief Class for LineSegment definition
+ */
 class LineSegment{
     private:
         Point start_point;/**< usually top*/
@@ -157,6 +165,10 @@ class LineSegment{
         coordinate slope();
 };
 
+/**
+ * \class PolarPoint
+ * \brief Class for Polar Point definition
+ */
 class PolarPoint: public Point{
     private:
         len p_distance;/**< radius*/
