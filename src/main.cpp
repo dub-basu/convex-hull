@@ -26,7 +26,7 @@
 #include "median_finding.cpp"
 
 #define VISUALISE true
-#define DEFAULT_FILENAME "../testcases/default_case1.txt"
+#define DEFAULT_FILENAME "../testcases/input3.txt"
 
 using namespace std;
 
@@ -80,27 +80,38 @@ int main(int argc, char** argv){
 
 
     /* Graham's Scan */
-    // GrahamScan gh_scan(points, gfx_ptr);
-    // gh_scan.compute_convex_hull();
-    // vector<PolarPoint> result;
-    // result = gh_scan.get_ch_points();
-
-    // /* Jarvis March */
-    // JarvisMarch jar_march(points, gfx_ptr);
-    // jar_march.compute_convex_hull();
-    // vector<Point> result;
-    // result = jar_march.get_ch_points();
-
-    /* KirkpatrickSiedel */
-    
-    KirkpatrickSiedel kps(points, gfx_ptr);
-    vector<Point> result = kps.compute();
-
-    /* Print Result */
-    cout << "Convex Hull points: " << endl;
-    for(auto pt: result){
+    GrahamScan gh_scan(points, gfx_ptr);
+    gh_scan.compute_convex_hull();
+    vector<PolarPoint> result_graham;
+    result_graham = gh_scan.get_ch_points();
+	cout << "Graham points: " << endl;
+    for(auto pt: result_graham){
         cout << pt << endl;
     }
+    cout <<"\n";
+    cout << "=====================================\n";
+    // // /* Jarvis March */
+    // cout << "Jarvis March\n";
+    // JarvisMarch jar_march(points, gfx_ptr);
+    // jar_march.compute_convex_hull();
+    // vector<Point> result_jarvis;
+    // result_jarvis = jar_march.get_ch_points();
+    // for(auto pt: result_jarvis){
+    //     cout << pt << endl;
+    // }
+    // cout <<"\n";
+    // cout << "=====================================\n";
+
+    // /* KirkpatrickSiedel */
+    // cout << "KPS\n";
+    // KirkpatrickSiedel kps(points, gfx_ptr);
+    // vector<Point> result_kps = kps.compute();
+
+    //  Print Result 
+    // // cout << "Convex Hull points: " << endl;
+    // for(auto pt: result_kps){
+    //     cout << pt << endl;
+    // }
 
     // KirkpatrickSiedel::KpsPoint p1(Point(-5,-2)), p2(Point(-1,-1)), p3(Point(-1,1));
     // vector<KirkpatrickSiedel::KpsPoint> arr{p1,p2,p3};

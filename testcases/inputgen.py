@@ -8,4 +8,4 @@ for i in range(20):
 			
 			x = random.uniform(-1000,1000)
 			y = random.uniform(-1000,1000)
-			file.write('('+'%.4f'%x+','+'%.4f'%y+')\n')
+			file.write('('+'%.2f'%x+','+'%.2f'%y+')\n')

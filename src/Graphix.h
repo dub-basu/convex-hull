@@ -10,14 +10,14 @@
 #define WIN_HEIGHT 540
 #define WIN_POSITION_X 0
 #define WIN_POSITION_Y  0
-#define WIN_DIM_NEG_X -7
-#define WIN_DIM_POS_X 7
-#define WIN_DIM_NEG_Y -7
-#define WIN_DIM_POS_Y 7
+#define WIN_DIM_NEG_X -1000
+#define WIN_DIM_POS_X 1000
+#define WIN_DIM_NEG_Y -1000
+#define WIN_DIM_POS_Y 1000
 
 #define WIN_NAME "Graphix"
 #define POINT_SIZE 8.0
-#define ANIMATION_SPEED 2000000
+#define ANIMATION_SPEED 200
 
 #endif
 
