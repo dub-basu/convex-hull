@@ -3,11 +3,12 @@
 
 #include <vector>
 #include "primitives.h"
+#include "ConvexHullGraphix.h"
 
 using namespace std;
 class KirkpatrickSiedel {
 public:
-
+    ConvexHullGraphix* chGfx;
     class KpsPoint : public Point{
     public:
         /** constructor
@@ -22,10 +23,11 @@ public:
         Point getPoint();
     };
 
-    KirkpatrickSiedel(vector<Point> v);
+    KirkpatrickSiedel(vector<Point> v, ConvexHullGraphix* = NULL);
 
     vector<Point> compute();
 private:
+    bool visualise;
 
     vector<KpsPoint> points;
 

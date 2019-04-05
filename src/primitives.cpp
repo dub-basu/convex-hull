@@ -1,6 +1,8 @@
 #include<cmath>
 #include "primitives.h"
 
+#define ERROR 1e-6
+
 Point::Point(){
     x = 0;
     y = 0;
@@ -69,11 +71,11 @@ bool LineSegment::contains_point(Point pt) const{
     coordinate slope_diff = (pt.x - start_point.x) * (pt.y - end_point.y)
                           - (pt.x - end_point.x) * (pt.y - start_point.y);
 
-    if(slope_diff != 0){
+    if(fabsl(slope_diff) > ERROR){
         return false;
     }
     else {
-        if(start_point.x == end_point.x)
+        if( fabsl(start_point.x - end_point.x) < ERROR )
             return(pt.y <= end_point.y && pt.y >= start_point.y);
         else{
             coordinate t = (pt.x - start_point.x) / (end_point.x - start_point.x);
@@ -162,7 +164,7 @@ Point LineSegment::vertical_projection(const Point &pt) const {
         coordinate y_coord = (pt.x - start_point.x) / (end_point.x - start_point.x);
         y_coord *= (end_point.y - start_point.y);
         y_coord += start_point.y;
-        Point retPt = Point(pt.x, y_coord);
+        Point retPt = Point(pt.x, y_coord);  
         return this -> contains_point(retPt) ? retPt : NAN_POINT ;
     }
 
