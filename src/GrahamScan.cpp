@@ -94,52 +94,36 @@ void GrahamScan::compute_convex_hull(){
             point_stack.push(temp1);
             if(point_stack.size() >= 3) continue;
             else{
-
-                PolarPoint temp2 = point_stack.top(); point_stack.pop();
-                PolarPoint temp3 = point_stack.top(); point_stack.pop();
-
                 if(this -> visualise){
-                    chGfx -> add_edge(temp3, *rear);
+                    chGfx -> add_edge(point_stack.top(), *front);
                     chGfx -> render();
                 }
-
-                point_stack.push(*rear);
-                rear--;
-                point_stack.push(temp3);
-                point_stack.push(temp2);
-                continue;
+                point_stack.push(*front);
+                front++;
             }
         }
     }
 
-    PolarPoint rear_next = *(rear+1);
-
-    if(rear_next.is_nan()){
-        if(this -> visualise){
-            chGfx -> add_edge(point_stack.top(), scan_points[0]);
-            chGfx -> render();
-        }
-        point_stack.push(scan_points[0]);
-    } else {
-        if(this -> visualise){
-            chGfx -> add_edge(point_stack.top(), rear_next);
-            chGfx -> render();
-        }
-        point_stack.push(rear_next);
+    // Add the first point again
+    if(this -> visualise){
+        chGfx -> add_edge(point_stack.top(), scan_points[0]);
+        chGfx -> render();
     }
+    point_stack.push(scan_points[0]);
 
-    if(!is_stack_top_valid(point_stack)){
-        Point pt1 = point_stack.top(); point_stack.pop();
-        Point pt2 = point_stack.top(); point_stack.pop();
+    while(!is_stack_top_valid(point_stack)){
+        PolarPoint pt1 = point_stack.top(); point_stack.pop();
+        PolarPoint pt2 = point_stack.top(); point_stack.pop();
+
         if(this -> visualise){
             chGfx -> remove_edge(pt1, pt2);
             chGfx -> remove_edge(pt2, point_stack.top());
             chGfx -> add_edge(pt1, point_stack.top());
             chGfx -> render();
         }
-    } else {
-        point_stack.pop();
+        point_stack.push(pt1);
     }
+
     stack_to_ch_points(point_stack);
     sort(ch_points.begin(), ch_points.end());
 }
