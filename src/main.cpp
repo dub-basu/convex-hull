@@ -24,8 +24,11 @@
 #include "ConvexHullGraphix.h"
 #include "KirkpatrickSiedel.h"
 #include "median_finding.cpp"
+#include <chrono> 
 
-#define VISUALISE true
+using namespace std::chrono; 
+
+#define VISUALISE false
 #define DEFAULT_FILENAME "../testcases/input3.txt"
 
 using namespace std;
@@ -78,7 +81,7 @@ int main(int argc, char** argv){
     }
     cout << "------------" << endl;
 
-
+    auto start = high_resolution_clock::now();
     /* Graham's Scan */
     GrahamScan gh_scan(points, gfx_ptr);
     gh_scan.compute_convex_hull();
@@ -89,29 +92,46 @@ int main(int argc, char** argv){
         cout << pt << endl;
     }
     cout <<"\n";
+    
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "GrahamScan time: " << duration.count() << endl; 
     cout << "=====================================\n";
+
+    start = high_resolution_clock::now();
     // // /* Jarvis March */
-    // cout << "Jarvis March\n";
-    // JarvisMarch jar_march(points, gfx_ptr);
-    // jar_march.compute_convex_hull();
-    // vector<Point> result_jarvis;
-    // result_jarvis = jar_march.get_ch_points();
-    // for(auto pt: result_jarvis){
-    //     cout << pt << endl;
-    // }
-    // cout <<"\n";
-    // cout << "=====================================\n";
+    cout << "Jarvis March\n";
+    JarvisMarch jar_march(points, gfx_ptr);
+    jar_march.compute_convex_hull();
+    vector<Point> result_jarvis;
+    result_jarvis = jar_march.get_ch_points();
+    for(auto pt: result_jarvis){
+        cout << pt << endl;
+    }
+    cout <<"\n";
 
+    stop = high_resolution_clock::now();
+    duration = duration_cast<microseconds>(stop - start);
+    cout << "JarvisMarch time: " << duration.count() << endl; 
+    cout << "=====================================\n";
+
+    start = high_resolution_clock::now();
     // /* KirkpatrickSiedel */
-    // cout << "KPS\n";
-    // KirkpatrickSiedel kps(points, gfx_ptr);
-    // vector<Point> result_kps = kps.compute();
+    cout << "KPS\n";
+    KirkpatrickSiedel kps(points, gfx_ptr);
+    vector<Point> result_kps = kps.compute();
+    stop = high_resolution_clock::now();
+    duration = duration_cast<microseconds>(stop - start);
+    
 
-    //  Print Result 
-    // // cout << "Convex Hull points: " << endl;
-    // for(auto pt: result_kps){
-    //     cout << pt << endl;
-    // }
+
+     // Print Result 
+    cout << "Convex Hull points: " << endl;
+    for(auto pt: result_kps){
+        cout << pt << endl;
+    }
+    cout << "KPS time: " << duration.count() << endl;
+
 
     // KirkpatrickSiedel::KpsPoint p1(Point(-5,-2)), p2(Point(-1,-1)), p3(Point(-1,1));
     // vector<KirkpatrickSiedel::KpsPoint> arr{p1,p2,p3};
