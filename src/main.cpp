@@ -24,8 +24,9 @@
 #include "ConvexHullGraphix.h"
 #include "KirkpatrickSiedel.h"
 #include "median_finding.cpp"
+#include "ChansAlgorithm.h"
 
-#define VISUALISE true
+#define VISUALISE false
 #define DEFAULT_FILENAME "../testcases/input3.txt"
 
 using namespace std;
@@ -80,16 +81,16 @@ int main(int argc, char** argv){
 
 
     /* Graham's Scan */
-    GrahamScan gh_scan(points, gfx_ptr);
-    gh_scan.compute_convex_hull();
-    vector<PolarPoint> result_graham;
-    result_graham = gh_scan.get_ch_points();
-	cout << "Graham points: " << endl;
-    for(auto pt: result_graham){
-        cout << pt << endl;
-    }
-    cout <<"\n";
-    cout << "=====================================\n";
+    // GrahamScan gh_scan(points, gfx_ptr);
+    // gh_scan.compute_convex_hull();
+    // vector<PolarPoint> result_graham;
+    // result_graham = gh_scan.get_ch_points();
+	// cout << "Graham points: " << endl;
+    // for(auto pt: result_graham){
+    //     cout << pt << endl;
+    // }
+    // cout <<"\n";
+    // cout << "=====================================\n";
     // // /* Jarvis March */
     // cout << "Jarvis March\n";
     // JarvisMarch jar_march(points, gfx_ptr);
@@ -101,6 +102,18 @@ int main(int argc, char** argv){
     // }
     // cout <<"\n";
     // cout << "=====================================\n";
+
+    /* Chan's Algorithm */
+    cout << "Chan's Algorithm\n";
+    Chans chans_obj(points, gfx_ptr);
+    chans_obj.compute_convex_hull();
+    vector<Point> result_chans;
+    result_chans = chans_obj.get_ch_points();
+    for(auto pt: result_chans){
+        cout << pt << endl;
+    }
+    cout <<"\n";
+    cout << "=====================================\n";
 
     // /* KirkpatrickSiedel */
     // cout << "KPS\n";
