@@ -2,6 +2,7 @@
 #include "primitives.h"
 
 #define ERROR 1e-6
+#define PERROR 0.000001
 
 Point::Point(){
     x = 0;
@@ -14,12 +15,11 @@ Point::Point(coordinate x_in, coordinate y_in){
 }
 
 bool Point::operator==(const Point &p2) {
-    // TODO: Floating point errors handle? Some epsilon
-    return this -> x == p2.x && this -> y == p2.y;
+    return abs(this -> x - p2.x) <= PERROR && abs(this -> y - p2.y) <= PERROR;
 }
 
 bool Point::operator!=(const Point &p2) {
-    return this->x != p2.x || this->y != p2.y;
+    return abs(this->x - p2.x)>PERROR || abs(this->y - p2.y)>PERROR;
 }
 
 bool Point::operator< (const Point& right) const{
