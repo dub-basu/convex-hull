@@ -126,6 +126,7 @@ void GrahamScan::compute_convex_hull(){
 
     stack_to_ch_points(point_stack);
     sort(ch_points.begin(), ch_points.end());
+    remove_duplicates();
 }
 
 std::vector<PolarPoint> GrahamScan::get_ch_points(){
@@ -233,4 +234,10 @@ void GrahamScan::stack_to_ch_points(std::stack<PolarPoint> points_stack){
         (this -> ch_points).push_back(pt);
         points_stack.pop();
     }
+}
+
+void GrahamScan::remove_duplicates(){
+    std::vector<PolarPoint>::iterator itr; 
+    itr = std::unique((this -> ch_points).begin(), (this -> ch_points).end());
+    (this -> ch_points).resize(std::distance((this -> ch_points).begin(), itr));
 }

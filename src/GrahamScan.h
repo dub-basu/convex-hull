@@ -47,6 +47,10 @@ class GrahamScan{
         /** Draws edges on stack
         */
         void draw_edges_on_stack();
+
+        /** Remove duplicates from GrahamScan result_points
+        */
+        void remove_duplicates();
     public:
         ConvexHullGraphix* chGfx;/**< graphics stuff*/
 
