@@ -73,3 +73,18 @@ void ConvexHullGraphix::draw_point(Point pt, GLfloat red, GLfloat green, GLfloat
         glColor3f(DEFAULT_COLOR);
     glEnd();
 }
+
+void ConvexHullGraphix::clear_lines(){
+    (this -> edges).clear();
+    update_scene();
+}
+
+void ConvexHullGraphix::remove_point(Point pt){
+    input_points.erase(std::remove(input_points.begin(), input_points.end(), pt), input_points.end());
+    update_scene();
+}
+
+void ConvexHullGraphix::add_point(Point pt){
+    input_points.push_back(pt);
+    update_scene();
+}
