@@ -1,5 +1,4 @@
-#include<algorithm>
-#include<unistd.h>
+#include <algorithm>
 #include "ChansAlgorithm.h"
 #include "GrahamScan.h"
 
@@ -21,12 +20,10 @@ void Chans::set_input_points(std::vector<Point>& points){
         chGfx -> init_points(this -> input_points);
         chGfx -> render();
     }
-    this -> m_value = 10;
     this -> threshold_angle = -1;
 }
 
 std::vector<std::vector<Point> > Chans::divide_into_subhulls(std::vector<Point> points, int m){
-    
     int number_of_subhulls = points.size() / m;
     if(points.size() % m != 0)
         number_of_subhulls++;
@@ -53,12 +50,28 @@ std::vector<std::vector<Point> > Chans::divide_into_subhulls(std::vector<Point> 
         
         std::vector<PolarPoint> result_graham;
         result_graham = gh_scan.get_ch_points();
+
+        if(this -> visualise){
+            for(auto pt: subhulls[i]){
+                chGfx -> remove_point(pt);
+            }
+            for(auto pt: result_graham){
+                chGfx -> add_point(pt);
+            }
+        }
+
         subhulls[i].resize(result_graham.size());
-        
+
         for(int j=0;j<result_graham.size();j++){
             Point pt(result_graham[j].x, result_graham[j].y);
             subhulls[i][j] = pt;
         }
+
+        if(this -> visualise){
+            draw_subhull(subhulls[i]);
+            chGfx -> render();
+        }
+
     }
 
     return(subhulls);
@@ -66,51 +79,30 @@ std::vector<std::vector<Point> > Chans::divide_into_subhulls(std::vector<Point> 
 }
 
 void Chans::compute_convex_hull(){
-    this -> sub_hulls = divide_into_subhulls(this -> input_points, this -> m_value);
-    debug_print_subhulls();
-
-
     this -> starting_point = find_starting_point();
-    Point next_point(this -> starting_point);
+    int t = 1;
 
-    do{
-        
-        if(this -> visualise){
-            chGfx -> update_pivot_point(next_point);
-            chGfx -> render();
+    while(true){
+        this -> m_value = pow(2, pow(2,t));
+        find_hull_points(this -> m_value);
+
+        if(!(this -> incomplete)){
+            break;
+        } else {
+            std::cout << "!! INCOMPLETE !!\nNumber of points found = " << (this -> ch_points).size() << std::endl;
+            std::cout << "Points found: " << std::endl;
+            for(auto pt: this -> ch_points){
+                std::cout << pt << std::endl;
+            }
+            std::cout << std::endl;
+            t++;
         }
-
-        ch_points.push_back(next_point);
-        // std::cout << "FOUND CH POINT: " << next_point << std::endl;
-        Point pt = find_next_point(next_point);
-
-        if(this -> visualise){
-            chGfx -> add_edge(next_point, pt);
-            chGfx -> render();
-        }
-
-        // std::cout << "Found next point" << pt << std::endl;
-        
-        next_point = pt;
-
-    }while(next_point != this -> starting_point);    
-
+    }
 }
 
 Point Chans::find_starting_point(){
     std::vector<Point> min_points;
-
-    for(auto subhull: this -> sub_hulls){
-        min_points.push_back(*min_element(subhull.begin(), subhull.end()));
-    }
-
-    // std::cout << "Min Points: " << std::endl;
-    // for(auto point: min_points){
-    //     std::cout << point << std::endl;
-    // }
-
-    Point minimum_point = *min_element(min_points.begin(), min_points.end());
-    // std::cout << "\nMinimum Point: " << minimum_point << std::endl;
+    Point minimum_point = *min_element((this -> input_points).begin(), (this -> input_points).end());
     return(minimum_point);
 }
 
@@ -120,18 +112,10 @@ Point Chans::find_next_point(Point pt){
     
     for(auto subhull: this -> sub_hulls){
         PolarPoint tan_point(find_point_of_Rtangency(pt, subhull), pt);
-        // std::cout << "Point of contact: " << tan_point << std::endl << std::endl;
         points_of_tangency.push_back(tan_point);
     }
 
     sort(points_of_tangency.begin(), points_of_tangency.end());
-    // std::cout << "Current pivot point: " << pt << std::endl;
-    // std::cout << "Points of tangency: " << std::endl;
-    // for(auto pt: points_of_tangency){
-    //     std::cout << pt << std::endl;
-    // }
-    // std::cout << std::endl;
-
 
     PolarPoint next_p_pt;
     for(auto p_pt: points_of_tangency){
@@ -145,112 +129,71 @@ Point Chans::find_next_point(Point pt){
         }
     }
     this -> threshold_angle = next_p_pt.get_p_angle();
-
-    // std::cout << "found min point of tangency: " << next_p_pt << std::endl;
+    
     Point min_point(next_p_pt.x, next_p_pt.y);
-
     return(min_point);
 }
 
 Point Chans::find_point_of_Rtangency(Point pt, std::vector<Point> subhull){
 
-    // std::cout << "Pivot point for search: " << pt << std::endl;
-    // std::cout << "\nBinary search on hull: " << std::endl;
-    // if(this -> visualise){
-    //     debug_draw_subhull(subhull);
-    //     chGfx -> render();
-    // }
-    // for(auto pt: subhull){
-    //     std::cout << pt << std::endl; 
-    // }
-    // std::cout << std::endl;
+    int debug_flag = 0;
+    Point debug_temp(252.8, -996.68);
+    Point debug_temp2(222.96, 484.7);
 
+    if(pt == debug_temp && subhull[0] == debug_temp2 && this -> m_value == 16)
+        debug_flag = 1;
+    
     int subhull_size = subhull.size();
 
-    int start = 0;
-    int end = subhull_size - 1;
+    int start;
+    int end;
     int mid;
 
     bool start_up, mid_down;
-
+    
     if (below(pt, subhull[1], subhull[0]) && !above(pt, subhull[subhull_size-1], subhull[0]))
         return subhull[0];
-
-    // std::cout << "Now entering binary search...\n" << std::endl;
 
     for(start=0, end=subhull_size;;){
        
         mid = (start + end) / 2;
-
-        // std::cout << "start = " << start << " " << subhull[start] << std::endl;
-        // std::cout << "mid = " << mid << " " << subhull[mid] << std::endl;
-        // std::cout << "end = " << end << " " << subhull[end] << std::endl;
         int a = start, b = mid, c = end;
         
-        if(this -> visualise){
-            chGfx -> add_edge(pt, subhull[mid]);
-            chGfx -> add_edge(pt, subhull[start]);
-            chGfx -> add_edge(pt, subhull[end]);
-            chGfx -> render();
-        }
-        // usleep(1000000);
-
         if(subhull[start] == pt){
             return(subhull[(start+1)%subhull_size]);
-        } else if (subhull[end] == pt) {
+        } else if (subhull[end] == pt && !subhull[end].is_nan()) {
             return(subhull[(end+1)%subhull_size]);
         } else if (subhull[mid] == pt) {
             return(subhull[(mid+1)%subhull_size]); 
         }
-        
 
         mid_down = below(pt, subhull[(mid+1)%subhull_size], subhull[mid]);
         if(mid_down && !above(pt, subhull[(mid-1)%subhull_size], subhull[mid]))
             return(subhull[mid]);
 
-        // std::cout << "Mid down: " << mid_down << std::endl;
-
         start_up = above(pt, subhull[(start+1)%subhull_size], subhull[start]);
-        // std::cout << "Start up: " << start_up << std::endl;
+        
         if(start_up){
-            // std::cout << "if condition reached" << std::endl;
             if(mid_down){
-                // std::cout << "if if " << std::endl;
                 end = mid;
             } else {
                 if(above(pt, subhull[start], subhull[mid])){
-                    // std::cout << "if else if" << std::endl;
                     end = mid;
                 } else {
-                    // std::cout << "if else else" << std::endl;
                     start = mid;
                 }
             }
         } else {
-            // std::cout << "else condition reached" << std::endl;
             if(!mid_down){
-                // std::cout << "else first" << std::endl; 
                 start = mid;
             } else {
                 if(below(pt, subhull[start], subhull[mid])){
-                    // std::cout << "else second first" << std::endl;
                     end = mid;
                 } else {
-                    // std::cout << "else second second" << std::endl;
                     start = mid;
                 }
             }
         }
-
-        if(this -> visualise){
-            chGfx -> remove_edge(pt, subhull[b]);
-            chGfx -> remove_edge(pt, subhull[a]);
-            chGfx -> remove_edge(pt, subhull[c]);
-            chGfx -> render();
-        }
-
-    // usleep(50000);
-    // std::cout << "\n" ;
     }
 }
 
@@ -281,13 +224,44 @@ void Chans::debug_print_subhulls(){
     }
 }
 
-void Chans::debug_draw_subhull(std::vector<Point> subhull){
+void Chans::draw_subhull(std::vector<Point> subhull){
     for(int i=0;i<subhull.size()-1;i++){
+        chGfx -> add_edge(subhull[i], subhull[i+1]);
+    }
+    chGfx -> add_edge(subhull[subhull.size()-1], subhull[0]);
+}
+
+void Chans::find_hull_points(int maximum_number_of_points){
+
+    this -> threshold_angle = -1;
+    (this -> ch_points).clear();
+    std::cout << "\nM value: " << this -> m_value << std::endl;
+    this -> sub_hulls = divide_into_subhulls(this -> input_points, this -> m_value);
+
+    Point next_point(this -> starting_point);
+
+    for(int count=0; count < maximum_number_of_points; count++){
+
+        ch_points.push_back(next_point);
+        Point pt = find_next_point(next_point);
+
         if(this -> visualise){
-            LineSegment ls(subhull[i], subhull[i+1]);
-            chGfx -> add_edge(ls);
+            chGfx -> add_edge(next_point, pt);
+            chGfx -> render();
+        }
+
+        next_point = pt;
+
+        if(next_point == this -> starting_point){
+            this -> incomplete = false;
+            return;
+        } else {
+            continue;
         }
     }
-    LineSegment ls(subhull[subhull.size()-1], subhull[0]);
-    chGfx -> add_edge(ls);
+    this -> incomplete = true;
+    if(this -> visualise){
+        chGfx -> clear_lines();
+    }
+    return;
 }

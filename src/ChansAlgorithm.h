@@ -18,7 +18,9 @@ class Chans{
         bool above(Point, Point, Point);
         bool below(Point, Point, Point);
         angle threshold_angle;
+        bool incomplete;
 
+        void find_hull_points(int);
         Point find_next_point(Point);
         Point find_starting_point();
         Point find_point_of_Rtangency(Point, std::vector<Point>);
@@ -26,7 +28,7 @@ class Chans{
 
     public:
         void debug_print_subhulls();
-        void debug_draw_subhull(std::vector<Point>);
+        void draw_subhull(std::vector<Point>);
         ConvexHullGraphix* chGfx;
         Chans();
         Chans(std::vector<Point>& points, ConvexHullGraphix* gfx = NULL);
