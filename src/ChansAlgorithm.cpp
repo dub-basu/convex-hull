@@ -15,7 +15,6 @@ Chans::Chans(std::vector<Point>& points, ConvexHullGraphix* gfx){
 void Chans::set_input_points(std::vector<Point>& points){
     this -> input_points = points;
     if(input_points.size() < 3) return;
-    this -> threshold_angle = -1;
 }
 
 std::vector<std::vector<Point> > Chans::divide_into_subhulls(std::vector<Point> points, int m){
