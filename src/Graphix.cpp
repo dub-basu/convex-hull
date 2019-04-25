@@ -27,8 +27,10 @@ void Graphix::window_refresh_callback(GLFWwindow* window){
 }
 
 void Graphix::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods){
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS){
         glfwSetWindowShouldClose(window, GL_TRUE);
+        exit(0);
+    }
     else if(key == GLFW_KEY_Q && action == GLFW_PRESS){
         // cout << "entered Q" << endl;
     }
