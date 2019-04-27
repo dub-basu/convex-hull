@@ -26,7 +26,7 @@
 #include "median_finding.cpp"
 #include "ChansAlgorithm.h"
 
-#define VISUALISE false
+#define VISUALISE true
 #define DEFAULT_FILENAME "../testcases/input3.txt"
 
 using namespace std;
@@ -114,6 +114,21 @@ int main(int argc, char** argv){
     }
     cout <<"\n";
     cout << "=====================================\n";
+
+    if(VISUALISE){
+        gfx_ptr -> clear();
+
+        vector<LineSegment> ls_set = gfx_ptr -> edges;
+        for(auto edge: ls_set){
+            gfx_ptr -> remove_edge(edge);
+        }
+        gfx_ptr -> render();
+
+        for(int i=0;i<result_chans.size();i++){
+            gfx_ptr -> add_edge(result_chans[i], result_chans[(i+1)%result_chans.size()]);
+        }
+        gfx_ptr -> render();
+    }
 
     // /* KirkpatrickSiedel */
     // cout << "KPS\n";

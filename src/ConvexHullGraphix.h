@@ -19,7 +19,6 @@ class ConvexHullGraphix: public Graphix {
     private:
         
         std::vector<Point> input_points;
-        std::vector<LineSegment> edges;
         Point pivot_point;
         Point event_pt;
 
@@ -31,6 +30,7 @@ class ConvexHullGraphix: public Graphix {
         void update_scene();
         void draw_edges();
     public:
+        std::vector<LineSegment> edges;
         void update_pivot_point(Point&);
         ConvexHullGraphix(std::mutex& mtx);
         void add_edge(LineSegment);

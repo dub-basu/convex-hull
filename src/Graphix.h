@@ -6,8 +6,8 @@
 #define DRAW_COLOR 1.0, 0.0, 0.0
 #define DRAW_COLOR2 0.0, 0.0, 0.0
 
-#define WIN_BREADTH 540
-#define WIN_HEIGHT 540
+#define WIN_BREADTH 900
+#define WIN_HEIGHT 900
 #define WIN_POSITION_X 0
 #define WIN_POSITION_Y  0
 #define WIN_DIM_NEG_X -1000
@@ -17,7 +17,7 @@
 
 #define WIN_NAME "Graphix"
 #define POINT_SIZE 8.0
-#define ANIMATION_SPEED 200
+#define ANIMATION_SPEED 600000
 
 #endif
 
